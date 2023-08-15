@@ -1,4 +1,4 @@
 baseURL = 'http://renanfernandes.org/'
 languageCode = 'en-us'
 title = 'renanfernandes'
-theme = 'ananke'
+theme = 'anatole'
