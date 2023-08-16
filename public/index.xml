@@ -13,7 +13,9 @@
       <pubDate>Tue, 15 Aug 2023 11:05:30 -0400</pubDate>
       
       <guid>http://renanfernandes.org/posts/my-first-post/</guid>
-      <description>Hello World First post hello!</description>
+      
+        <description>Hello World First post hello!</description>
+      
     </item>
     
   </channel>
