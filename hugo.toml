@@ -2,3 +2,23 @@ baseURL = 'http://renanfernandes.org/'
 languageCode = 'en-us'
 title = 'renanfernandes'
 theme = 'anatole'
+
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 200
+  identifier = "posts"
+  url = "/posts/"
+
+  [[menu.main]]
+  name = "About"
+  weight = 300
+  identifier = "about"
+  url = "/about/"
