@@ -1,8 +1,8 @@
 
-title = "Renan"
+title = "Hi, I'm Renan"
 author = "Renan Mathias Fernandes"
-#copyright = "2020-2021"
-description = "If it's imaginable to some degree, I can become it"
+copyright = "2023, renan"
+description = """Cybersecurity leader, with 12+ years of industry experience and a passion to build and break things """
 profilePicture = "images/profile.jpg"
 keywords = ""
 favicon = "favicons/"
@@ -10,7 +10,7 @@ favicon = "favicons/"
 customCss = []
 # example ["js/custom.js"]
 customJs = [] 
-mainSections = ["post"]
+mainSections = ["posts"]
 images = ["images/site-feature-image.png"]
 doNotLoadAnimations = false
 # Form Spree Contact Form
