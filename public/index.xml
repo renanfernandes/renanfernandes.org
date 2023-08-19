@@ -6,7 +6,19 @@
     <description>Recent content on renanfernandes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Aug 2023 11:05:30 -0400</lastBuildDate><atom:link href="http://renanfernandes.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Aug 2023 14:55:27 -0400</lastBuildDate><atom:link href="http://renanfernandes.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Connecting your pfSense to Microsoft Sentinel</title>
+      <link>http://renanfernandes.org/posts/sentinel-pfsense/</link>
+      <pubDate>Sat, 19 Aug 2023 14:55:27 -0400</pubDate>
+      
+      <guid>http://renanfernandes.org/posts/sentinel-pfsense/</guid>
+      
+        <description>Lab Stuff Just a collection of templates, scripts, configuration files and testing observations to make my life easier. This is part of my own GitHub repository (and one of the fews I make public), so use the content and scripts here at your own risk :)
+Table of Contents Integrating Sentinel and Home Infrastructure Syslog server Provisioning the VM Configuring the Syslog Server Creating a Firewall rule to allow incoming traffic to Logstash Configuring pfSense Configuring Log Analytics Workspace Final Step: Sentinel!</description>
+      
+    </item>
+    
     <item>
       <title>Hello World</title>
       <link>http://renanfernandes.org/posts/my-first-post/</link>
