@@ -408,13 +408,13 @@ Table of Contents Integrating Sentinel and Home Infrastructure Syslog server Pro
 <h1 id="integrating-sentinel-and-home-infrastructure">Integrating Sentinel and Home Infrastructure</h1>
 <p>As my home network continues to grow and more and more IoT devices are added, I felt the need to better improve my home security posture and frankly have a better visibilty over what is going on in my network.</p>
 <p>To start, the diagram below shows how my home network is currently set up. Without going too much into details, I have three VLANs, 1) IoT, 2) Trusted Network, 3) Servers and 4) Untrusted/Guest Network.</p>
-<!-- raw HTML omitted -->
+<p><img src="/images/diagram.png" alt="Network Diagram"></p>
 <p>My IoT VLAN goes out to the internet, but have no access to my Trusted VLAN, except for mdns broadcast that thanks to <a href="http://avahi.org">Avahi</a>, allows me to control my IoT devices when I am at home.
 This is all ultimately controlled by pfSense running on my Netgate SG-1100. I am expanding the Network so after the holidays I&rsquo;ll replace SG-1100 for something a little bit more powerful.</p>
 <p>So the idea is to start shipping my pfSense logs to <a href="https://azure.microsoft.com/en-us/services/azure-sentinel/">Microsoft Sentinel</a>, where I can better monitor my Network and detect suspicious activity.</p>
 <p>Microsoft Sentinel provides a Pay-As-You-Go <a href="https://azure.microsoft.com/en-us/pricing/details/azure-sentinel/">Pricing</a> currently at $2.46 per GB ingested, that should keep the costs minimal for my home use and give me a lot of flexibility to create rules, orchestration and automation. So, no brainer :)</p>
 <p>Ok! To put everything together, I created this draft to show what I will be deploying as my final solution:</p>
-<!-- raw HTML omitted -->
+<p><img src="/images/architecture.png" alt="Network Architecture"></p>
 <p>I will be deploying a Syslog server on Azure, allowing me to scale the solution and forward syslog events from some key servers and applications I host locally.
 My syslog data will be stored on Log Analytics Workspace that in the end will be added to Sentinel for Ingestion and Analysis.</p>
 <p>So lets start!</p>
@@ -425,7 +425,7 @@ My syslog data will be stored on Log Analytics Workspace that in the end will be
 <p>This will give room to expand and allow me to connect my servers overseas to this infrastructure, but thats a topic for another day.</p>
 <h3 id="provisioning-the-vm">Provisioning the VM</h3>
 <p>Since I am not doing anything fancy and all I need is to collect syslogs, I provisioned a single VM with Ubuntu 21.10 and used <strong>Standard_B2s</strong> size. Which gives me 2 vCPUs and 4 GB of RAM at East US 2 Region. Costing me approximately $30.37/month, not bad!</p>
-<!-- raw HTML omitted -->
+<p><img src="/images/syslog-azure1.png" alt="Syslog Configuration"></p>
 <p>Now that your VM is up, its time to configure Rsyslog Server</p>
 <h3 id="configuring-the-syslog-server">Configuring the Syslog Server</h3>
 <p>First things first&hellip; Ensure you have the most up-to-date version of your packages and OS by running apt update:</p>
@@ -491,8 +491,8 @@ sudo tcpdump -A -ni any port 5140 -v
 </code></pre><p>Keep this terminal up so you can check if you are receiving packages once you finish the pfSense configuration</p>
 <h3 id="creating-a-firewall-rule-to-allow-incoming-traffic-to-logstash">Creating a Firewall rule to allow incoming traffic to Logstash</h3>
 <p>We are almost there. Now you need to allow incoming connections to port 5140, so your pfSense can report logs to Logstash.</p>
-<p>On Azure Portal, go to your VM &gt; Networking and add the following Rule:
-<!-- raw HTML omitted --></p>
+<p>On Azure Portal, go to your VM &gt; Networking and add the following Rule:</p>
+<p><img src="/images/syslog-azure2.png" alt="Syslog Network Firewall Rule"></p>
 <p>Be advised that you should also restrict the Source Ip to ensure that only your pfSense is allowed to send logs to logstash. I&rsquo;m ommiting the IP address here for obvious reasons.</p>
 <h2 id="configuring-pfsense">Configuring pfSense</h2>
 <p>The final and last step of this configuration is to allow pfSense to ship the logs to your Syslog server.</p>
@@ -533,8 +533,8 @@ Install the Microsoft Logstash LogAnalytics plugin by using the following comman
 sudo systemctl start logstash
 </code></pre><p>Within a few minutes you should start seeing events hitting Log Analytics</p>
 <h2 id="final-step-sentinel">Final Step: Sentinel!</h2>
-<p>If you haven&rsquo;t done it yet, Add Microsoft Sentinel to your Log Analytics workspace. After some minutes you&rsquo;ll start seeing the events hitting Sentinel
-<!-- raw HTML omitted --></p>
+<p>If you haven&rsquo;t done it yet, Add Microsoft Sentinel to your Log Analytics workspace. After some minutes you&rsquo;ll start seeing the events hitting Sentinel</p>
+<p><img src="/images/sentinel1.png" alt="Sentinel Screenshot"></p>
 <p>As you can see, I have a rule called &ldquo;IoT Devices Trying to do something strange&rdquo;. To ilustrate some basic capabilities, I&rsquo;ll show below how to create a simple KQL query to detect if my IoT devices, that are sitting on my IoT VLAN tries to reach out my Trusted VLAN.</p>
 <h3 id="first-rule-detecting-lateral-movement">First Rule: Detecting lateral movement</h3>
 <p>In Sentinel, navigate to Logs and create a new query similar to this one:</p>
@@ -546,13 +546,13 @@ sudo systemctl start logstash
 </span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> project TimeGenerated, source_ip_s, source_port_s, destination_ip_s, destination_port_s,
 </span></span><span style="display:flex;"><span>    network_direction_s, event_action_s, event_reason_s, rule_description_s, destination_service_s, network_transport_s
 </span></span></code></pre></div><p>This query searches for alerts occuring at <code>vneta0.50</code> which is my IoT VLAN. So at the end of the day if my IOT devices are doing something that would violate one of my firewall rules, I need to check what happened.</p>
-<!-- raw HTML omitted -->
+<p><img src="/images/sentinel2.png" alt="Sentinel Screenshot"></p>
 <p>After you test this query go to <code>New Alert rule</code> &gt; <code>Create Azure Sentinel Alert</code></p>
-<p>Fill in the name, Description and Severity of this rule and move to <code>Set rule logic</code>
-<!-- raw HTML omitted --></p>
+<p>Fill in the name, Description and Severity of this rule and move to <code>Set rule logic</code></p>
+<p><img src="/images/sentinel_rule1.png" alt="Sentinel Screenshot"></p>
 <p>Sentinel gives you cool capabilities to Enrich your alerts, map and automate response. For the sake of this example, we will just create a simple rule, so click <code>Next</code> until you hit the <code>Review and create</code> screen.</p>
-<p>The Review and create screen will validate the rule and if everything went well, allow you to <code>Create</code> your rule.
-<!-- raw HTML omitted --></p>
+<p>The Review and create screen will validate the rule and if everything went well, allow you to <code>Create</code> your rule.</p>
+<p><img src="/images/sentinel_rule2.png" alt="Sentinel Screenshot"></p>
 <p>Voila! Now you have your first rule created and your pfSense is reporting events to Sentinel.</p>
 <p>Next time I&rsquo;ll show how to create a Dashboard and Alerts to expand your deployment</p>
 </div>

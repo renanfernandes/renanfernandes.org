@@ -27,7 +27,7 @@ As my home network continues to grow and more and more IoT devices are added, I 
 
 To start, the diagram below shows how my home network is currently set up. Without going too much into details, I have three VLANs, 1) IoT, 2) Trusted Network, 3) Servers and 4) Untrusted/Guest Network.
 
-<img src="images/diagram.png" width="600">
+![Network Diagram](/images/diagram.png)
 
 My IoT VLAN goes out to the internet, but have no access to my Trusted VLAN, except for mdns broadcast that thanks to [Avahi](http://avahi.org), allows me to control my IoT devices when I am at home.
 This is all ultimately controlled by pfSense running on my Netgate SG-1100. I am expanding the Network so after the holidays I'll replace SG-1100 for something a little bit more powerful.
@@ -38,7 +38,7 @@ Microsoft Sentinel provides a Pay-As-You-Go [Pricing](https://azure.microsoft.co
 
 Ok! To put everything together, I created this draft to show what I will be deploying as my final solution:
 
-<img src="images/architecture.png" width="600">
+![Network Architecture](/images/architecture.png)
 
 I will be deploying a Syslog server on Azure, allowing me to scale the solution and forward syslog events from some key servers and applications I host locally.
 My syslog data will be stored on Log Analytics Workspace that in the end will be added to Sentinel for Ingestion and Analysis.
@@ -57,7 +57,7 @@ This will give room to expand and allow me to connect my servers overseas to thi
 ### Provisioning the VM
 Since I am not doing anything fancy and all I need is to collect syslogs, I provisioned a single VM with Ubuntu 21.10 and used **Standard_B2s** size. Which gives me 2 vCPUs and 4 GB of RAM at East US 2 Region. Costing me approximately $30.37/month, not bad!
 
-<img src="images/syslog-azure1.png" width="600">
+![Syslog Configuration](/images/syslog-azure1.png)
 
 Now that your VM is up, its time to configure Rsyslog Server
 
@@ -188,7 +188,8 @@ Keep this terminal up so you can check if you are receiving packages once you fi
 We are almost there. Now you need to allow incoming connections to port 5140, so your pfSense can report logs to Logstash.
 
 On Azure Portal, go to your VM > Networking and add the following Rule:
-<img src="images/syslog-azure2.png" width="600">
+
+![Syslog Network Firewall Rule](/images/syslog-azure2.png)
 
 Be advised that you should also restrict the Source Ip to ensure that only your pfSense is allowed to send logs to logstash. I'm ommiting the IP address here for obvious reasons.
 
@@ -247,7 +248,8 @@ Within a few minutes you should start seeing events hitting Log Analytics
 
 ## Final Step: Sentinel!
 If you haven't done it yet, Add Microsoft Sentinel to your Log Analytics workspace. After some minutes you'll start seeing the events hitting Sentinel
-<img src="images/sentinel1.png" width="800">
+
+![Sentinel Screenshot](/images/sentinel1.png)
 
 As you can see, I have a rule called "IoT Devices Trying to do something strange". To ilustrate some basic capabilities, I'll show below how to create a simple KQL query to detect if my IoT devices, that are sitting on my IoT VLAN tries to reach out my Trusted VLAN.
 
@@ -267,17 +269,19 @@ pfSenseLogstash_CL
 
 This query searches for alerts occuring at `vneta0.50` which is my IoT VLAN. So at the end of the day if my IOT devices are doing something that would violate one of my firewall rules, I need to check what happened.
 
-<img src="images/sentinel2.png" width="600">
+![Sentinel Screenshot](/images/sentinel2.png)
 
 After you test this query go to `New Alert rule` > `Create Azure Sentinel Alert`
 
 Fill in the name, Description and Severity of this rule and move to `Set rule logic`
-<img src="images/sentinel_rule1.png" width="600">
+
+![Sentinel Screenshot](/images/sentinel_rule1.png)
 
 Sentinel gives you cool capabilities to Enrich your alerts, map and automate response. For the sake of this example, we will just create a simple rule, so click `Next` until you hit the `Review and create` screen.
 
 The Review and create screen will validate the rule and if everything went well, allow you to `Create` your rule.
-<img src="images/sentinel_rule2.png" width="600">
+
+![Sentinel Screenshot](/images/sentinel_rule2.png)
 
 
 Voila! Now you have your first rule created and your pfSense is reporting events to Sentinel.
