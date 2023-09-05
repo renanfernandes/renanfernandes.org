@@ -6,7 +6,19 @@
     <description>Recent content on renanfernandes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Aug 2023 14:55:27 -0400</lastBuildDate><atom:link href="http://renanfernandes.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Aug 2023 16:28:38 -0400</lastBuildDate><atom:link href="http://renanfernandes.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pfSense and UDM-Pro, Happy together with Wiregard</title>
+      <link>http://renanfernandes.org/posts/pfsense-udm-wiregard/</link>
+      <pubDate>Sun, 20 Aug 2023 16:28:38 -0400</pubDate>
+      
+      <guid>http://renanfernandes.org/posts/pfsense-udm-wiregard/</guid>
+      
+        <description>Now that Wireguard is officially supported by Ubiquiti, I&amp;rsquo;ve decided its time to fix my VPN once and for all. Since I have a pfSense up and running in Brazil and a UDM Pro here in US, I always leveraged a Site-to-Site VPN with ipsec to access my devices in both ends.
+While my IPsec tunnel has been working fairly well over the years, now that Ubiquiti offers Wireguard support, its time for me to modernize my setup and look into some new use cases.</description>
+      
+    </item>
+    
     <item>
       <title>Connecting your pfSense to Microsoft Sentinel</title>
       <link>http://renanfernandes.org/posts/sentinel-pfsense/</link>
@@ -14,7 +26,7 @@
       
       <guid>http://renanfernandes.org/posts/sentinel-pfsense/</guid>
       
-        <description>Lab Stuff Just a collection of templates, scripts, configuration files and testing observations to make my life easier. This is part of my own GitHub repository (and one of the fews I make public), so use the content and scripts here at your own risk :)
+        <description>Just a collection of templates, scripts, configuration files and testing observations to make my life easier. This is part of my own GitHub repository (and one of the fews I make public), so use the content and scripts here at your own risk :)
 Table of Contents Integrating Sentinel and Home Infrastructure Syslog server Provisioning the VM Configuring the Syslog Server Creating a Firewall rule to allow incoming traffic to Logstash Configuring pfSense Configuring Log Analytics Workspace Final Step: Sentinel!</description>
       
     </item>

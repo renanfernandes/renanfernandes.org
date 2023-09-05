@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <title>
+    
+      
+        pfSense and UDM-Pro, Happy together with Wiregard |
+      Renan Mathias Fernandes
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.117.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Renan Mathias Fernandes" />
+  <meta
+    name="description"
+    content="Cybersecurity leader, with 12&#43; years of industry experience and a passion to build and break things "
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.1147aa5bacb4bce677a0e264073829caedb82fd18ea07a5f1d80521f539d1c45.css"
+      integrity="sha256-EUeqW6y0vOZ3oOJkBzgpyu24L9GOoHpfHYBSH1OdHEU="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.55d8333481b07a08e07cf6f37319753a2b47e99f4c395394c5747b48b495aa9b.css"
+    integrity="sha256-VdgzNIGwegjgfPbzcxl1OitH6Z9MOVOUxXR7SLSVqps="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a7448d02590b43449364b6b5922ed9af5410abb4de4238412a830316dedb850b.css"
+    integrity="sha256-p0SNAlkLQ0STZLa1ki7Zr1QQq7TeQjhBKoMDFt7bhQs="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.9ed75a5d670c953fe4df935937674b4646f92674367e9e66eb995bb04e821647.css"
+    integrity="sha256-ntdaXWcMlT/k35NZN2dLRkb5JnQ2fp5m65lbsE6CFkc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="http://renanfernandes.org/posts/pfsense-udm-wiregard/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://renanfernandes.org/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="pfSense and UDM-Pro, Happy together with Wiregard"/>
+<meta name="twitter:description" content="Now that Wireguard is officially supported by Ubiquiti, I&rsquo;ve decided its time to fix my VPN once and for all. Since I have a pfSense up and running in Brazil and a UDM Pro here in US, I always leveraged a Site-to-Site VPN with ipsec to access my devices in both ends.
+While my IPsec tunnel has been working fairly well over the years, now that Ubiquiti offers Wireguard support, its time for me to modernize my setup and look into some new use cases."/>
+
+
+
+  
+  <meta property="og:title" content="pfSense and UDM-Pro, Happy together with Wiregard" />
+<meta property="og:description" content="Now that Wireguard is officially supported by Ubiquiti, I&rsquo;ve decided its time to fix my VPN once and for all. Since I have a pfSense up and running in Brazil and a UDM Pro here in US, I always leveraged a Site-to-Site VPN with ipsec to access my devices in both ends.
+While my IPsec tunnel has been working fairly well over the years, now that Ubiquiti offers Wireguard support, its time for me to modernize my setup and look into some new use cases." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://renanfernandes.org/posts/pfsense-udm-wiregard/" /><meta property="og:image" content="http://renanfernandes.org/images/site-feature-image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-20T16:28:38-04:00" />
+<meta property="article:modified_time" content="2023-08-20T16:28:38-04:00" /><meta property="og:site_name" content="Hi, I&#39;m Renan" />
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "pfSense and UDM-Pro, Happy together with Wiregard",
+        "headline": "pfSense and UDM-Pro, Happy together with Wiregard",
+        "alternativeHeadline": "",
+        "description": "
+      
+        Now that Wireguard is officially supported by Ubiquiti, I\u0026rsquo;ve decided its time to fix my VPN once and for all. Since I have a pfSense up and running in Brazil and a UDM Pro here in US, I always leveraged a Site-to-Site VPN with ipsec to access my devices in both ends.\nWhile my IPsec tunnel has been working fairly well over the years, now that Ubiquiti offers Wireguard support, its time for me to modernize my setup and look into some new use cases.
+
+
+      
+
+
+    ",
+        "inLanguage": "en-us",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/renanfernandes.org\/posts\/pfsense-udm-wiregard\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-08-20T16:28:38.00Z",
+        "datePublished": "2023-08-20T16:28:38.00Z",
+        "dateModified": "2023-08-20T16:28:38.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Renan Mathias Fernandes",
+            "url": "http://renanfernandes.org/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/renanfernandes.org\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "http://renanfernandes.org/images/site-feature-image.png"
+
+
+      
+      ]
+
+    ,
+        "url" : "http:\/\/renanfernandes.org\/posts\/pfsense-udm-wiregard\/",
+        "wordCount" : "731",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profile.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Hi, I&#39;m Renan</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Cybersecurity leader, with 12+ years of industry experience and a passion to build and break things </p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://www.linkedin.com/in/renanm/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Linkedin"
+            title="Linkedin"
+          >
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="http://github.com/renanfernandes"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:listas@renanfernandes.org"
+            target="_blank"
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2023, renan
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/posts/"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      <h1>PfSense and UDM-Pro, Happy Together With Wiregard</h1>
+      <p>Now that Wireguard is officially supported by Ubiquiti, I&rsquo;ve decided its time to fix my VPN once and for all. Since I have a pfSense up and running in Brazil and a UDM Pro here in US, I always leveraged a Site-to-Site VPN with ipsec to access my devices in both ends.</p>
+<p>While my IPsec tunnel has been working fairly well over the years, now that Ubiquiti offers Wireguard support, its time for me to modernize my setup and look into some new use cases. This post will guide you through step by step on how to make this works.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li>
+<p><a href="#wireguard-server-udm-pro">Wireguard Server UDM Pro</a></p>
+</li>
+<li>
+<p><a href="#wireguard-client-pfsense">Wireguard Client pfSense</a></p>
+<ul>
+<li><a href="#installing-wireguard-packages">Installing Wireguard Packages</a></li>
+<li><a href="#creating-the-tunnel">Creating the Tunnel</a></li>
+<li><a href="#establishing-the-peer-connection">Establishing the Peer Connection</a></li>
+<li><a href="#creating-the-interface">Creating the interface</a></li>
+<li><a href="#establishing-the-peer-connection">Establishing the Peer Connection</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#checking-the-handshake">Checking the handshake</a></p>
+</li>
+</ul>
+<h2 id="wireguard-server-udm-pro">Wireguard Server (UDM Pro)</h2>
+<p>The UDM Pro will act as the Wireguard Server, while pfSense will be the client connecting into it.
+Setting up Wireguard on UDM Pro is as easy as it gets. Going to</p>
+<blockquote>
+<p>Settings &gt; Teleport &amp; VPN &gt; VPN Server</p>
+</blockquote>
+<p>Takes you to the new VPN Server screen. Set the name of your VPN and take notes on your public key. You&rsquo;ll need it later.
+You can configure the Gateway and Network you&rsquo;d like or leave the default settings. If you decide to modify your network settings, use the Advanced. In my case the default settings works fine. So I&rsquo;ll leave it as is</p>
+<p><img src="/images/UDM_Wireguard_Setup_1.png" alt="UDM Wireguard Setup Screen"></p>
+<p>Use the <code>Add New Client</code> option to create your new client credentials. Select Manual to modify the default settings. Set up the name of your Client, take notes on the public key again and modify the Interface IP as needed (in case you modified the default network settings)</p>
+<p><img src="/images/UDM_Wireguard_Setup_2.png" alt="UDM Wireguard Add new Client"></p>
+<p>Believe it or not, you are done! Now lets move to pfSense.</p>
+<h2 id="wireguard-client-pfsense">Wireguard Client (pfSense)</h2>
+<p>Setting up Wireguard on pfSense is a bit more work. This post will only guide through the handshake process. On future posts I&rsquo;ll be showing some interesting use cases, on how to create a kill switch vpn and redirect the traffic from a VLAN to this VPN. Let&rsquo;s setup.</p>
+<h3 id="installing-wireguard-packages">Installing Wireguard Packages</h3>
+<p>Go to</p>
+<blockquote>
+<p>System&gt;Package Manager&gt;Available Packages</p>
+</blockquote>
+<p>Search for Wireguard and Install the package.</p>
+<h3 id="creating-the-tunnel">Creating the Tunnel</h3>
+<p>Once the Wireguard package is installed, you&rsquo;ll get a new Option under the VPN menu. Go to</p>
+<blockquote>
+<p>VPN&gt;Wireguard</p>
+</blockquote>
+<p>Click on <code>Add Tunnel</code></p>
+<pre tabindex="0"><code>Enable: Checked
+Description: Whatever you want
+Listen Port: Leave Blank
+Interface Keys: Use the private and public keys available at the configuration file (you saved this earlier, remember?)
+Private Key: Private key available under the [Interface] section of the configuration file
+Public Key: Public key generated when you created the Client on UDM Pro (its under [Peer] section of the configuration file)
+</code></pre><p><img src="/images/pfSense_Wireguard_Setup_1.png" alt="pfSense Wireguard Tunnel configuration"></p>
+<p>After that, click on Save Tunnel</p>
+<h3 id="establishing-the-peer-connection">Establishing the Peer Connection</h3>
+<p>With the tunnel created on pfSense, now its time to create the Peer and establish the connection with UDM Pro. Navigate to</p>
+<blockquote>
+<p>Peers&gt;Add Peer</p>
+</blockquote>
+<p>Set your settings to:</p>
+<pre tabindex="0"><code>Enable: Checked
+Tunnel: Select the new tunnel you just created
+Description: Whatever you want
+Dynamic Endpoint: Uncheck
+Endpoint: Set the IP address of your UDM Pro. The IP address and port can be also found on the configuration file generated by UDM Pro when you created the Client
+Port: Set the Port of your UDM Pro Wireguard
+KeepAlive: 25
+Public Key: Enter the public key that you took notes before. This is the public key from the Server, create on step 1
+Allowed IPs: Enter 0.0.0.0/0
+</code></pre><p><img src="/images/pfSense_Wireguard_Setup_1.png" alt="pfSense Wireguard Peer configuration">
+After that, click on Save Peer</p>
+<h3 id="creating-the-interface">Creating the interface</h3>
+<p>Go to</p>
+<blockquote>
+<p>Interfaces&gt;Assignments</p>
+</blockquote>
+<p>Under Available Network Ports, select the tunnel you created on the step above and click on the <code>+Add</code> button.
+This will create a new <strong>OPT</strong> interface.</p>
+<p>Click on the OPT interface and set your settings to:</p>
+<pre tabindex="0"><code>Enable: Checked
+IPv4 Configuration Type: Static IPv4
+MSS: 1412
+IPv4 Address: Set the IP Address of the Peer connection defined by UDM Pro
+IPv4 Upstream Gateway: Click on Add a new Gateway and on the Gateway IPv4 field, Set the IP Address of the Peer Connection defined by UDM Pro again.
+</code></pre><p>Click on <code>Save</code> and click the <code>Apply Changes</code> if needed</p>
+<p><img src="/images/pfSense_Wireguard_Setup_3.png" alt="pfSense Wireguard Interface Configuration"></p>
+<h2 id="checking-the-handshake">Checking the handshake</h2>
+<p>Head to</p>
+<blockquote>
+<p>VPN&gt;WireGuard&gt;Status</p>
+</blockquote>
+<p>Open the tunnel and verify if the handshake was established. You should see the handshake listed there</p>
+<p><img src="/images/pfSense_Wireguard_Handshake_1.png" alt="pfSense Wireguard Handshake"></p>
+<p>You can also confirm on the UDM Pro End, by logging on</p>
+<blockquote>
+<p>Settings&gt;Teleport &amp; VPN&gt;VPN Server</p>
+</blockquote>
+<p>And checking the # of Active Clients</p>
+<p><img src="/images/UDM_Wireguard_Handshake_1.png" alt="UDM Pro Wireguard Handshake"></p>
+</div>
+    <div class="post__footer">
+      
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2023, renan
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script></body>
+</html>
