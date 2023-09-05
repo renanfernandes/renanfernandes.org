@@ -1,7 +1,7 @@
 ---
 title: "pfSense and UDM-Pro, Happy together with Wiregard"
 date: 2023-08-20T16:28:38-04:00
-draft: true
+draft: false 
 --- 
 Now that Wireguard is officially supported by Ubiquiti, I've decided its time to fix my VPN once and for all. Since I have a pfSense up and running in Brazil and a UDM Pro here in US, I always leveraged a Site-to-Site VPN with ipsec to access my devices in both ends.
 
