@@ -6,7 +6,19 @@
     <description>Recent content in Posts on renanfernandes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Aug 2023 16:28:38 -0400</lastBuildDate><atom:link href="http://renanfernandes.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Sep 2023 11:32:06 -0400</lastBuildDate><atom:link href="http://renanfernandes.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Arc Ubuntu</title>
+      <link>http://renanfernandes.org/posts/azure-arc-ubuntu/</link>
+      <pubDate>Fri, 08 Sep 2023 11:32:06 -0400</pubDate>
+      
+      <guid>http://renanfernandes.org/posts/azure-arc-ubuntu/</guid>
+      
+        <description>Following the Wireguard series, I wanted to modernize my lab. one quick way to address that is to extend my two networks via Azure Arc so I can manage my resources more adequadely
+Table of Contents Installing Azure CLI Creating the deployment script via Azure Arc Portal Running the onboarding script Installing Azure CLI The steps to install Azure CLI are pretty well described so I wont take time to do this.</description>
+      
+    </item>
+    
     <item>
       <title>pfSense and UDM-Pro, Happy together with Wiregard</title>
       <link>http://renanfernandes.org/posts/pfsense-udm-wiregard/</link>

@@ -10,7 +10,7 @@
   <title>
     
       
-        Posts |
+        Azure Arc Ubuntu |
       Renan Mathias Fernandes
 
   </title>
@@ -82,10 +82,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
 
-  <link rel="canonical" href="http://renanfernandes.org/posts/" />
+  <link rel="canonical" href="http://renanfernandes.org/posts/azure-arc-ubuntu/" />
 
   
-  <link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="renanfernandes" />
   
   
   
@@ -114,21 +113,98 @@
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://renanfernandes.org/images/site-feature-image.png"/>
 
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Cybersecurity leader, with 12&#43; years of industry experience and a passion to build and break things "/>
+<meta name="twitter:title" content="Azure Arc Ubuntu"/>
+<meta name="twitter:description" content="Following the Wireguard series, I wanted to modernize my lab. one quick way to address that is to extend my two networks via Azure Arc so I can manage my resources more adequadely
+Table of Contents Installing Azure CLI Creating the deployment script via Azure Arc Portal Running the onboarding script Installing Azure CLI The steps to install Azure CLI are pretty well described so I wont take time to do this."/>
 
 
 
   
-  <meta property="og:title" content="Posts" />
-<meta property="og:description" content="Cybersecurity leader, with 12&#43; years of industry experience and a passion to build and break things " />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://renanfernandes.org/posts/" /><meta property="og:image" content="http://renanfernandes.org/images/site-feature-image.png"/><meta property="og:site_name" content="Hi, I&#39;m Renan" />
+  <meta property="og:title" content="Azure Arc Ubuntu" />
+<meta property="og:description" content="Following the Wireguard series, I wanted to modernize my lab. one quick way to address that is to extend my two networks via Azure Arc so I can manage my resources more adequadely
+Table of Contents Installing Azure CLI Creating the deployment script via Azure Arc Portal Running the onboarding script Installing Azure CLI The steps to install Azure CLI are pretty well described so I wont take time to do this." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://renanfernandes.org/posts/azure-arc-ubuntu/" /><meta property="og:image" content="http://renanfernandes.org/images/site-feature-image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-09-08T11:32:06-04:00" />
+<meta property="article:modified_time" content="2023-09-08T11:32:06-04:00" /><meta property="og:site_name" content="Hi, I&#39;m Renan" />
 
 
 
   
   
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "Azure Arc Ubuntu",
+        "headline": "Azure Arc Ubuntu",
+        "alternativeHeadline": "",
+        "description": "
+      
+        Following the Wireguard series, I wanted to modernize my lab. one quick way to address that is to extend my two networks via Azure Arc so I can manage my resources more adequadely\nTable of Contents Installing Azure CLI Creating the deployment script via Azure Arc Portal Running the onboarding script Installing Azure CLI The steps to install Azure CLI are pretty well described so I wont take time to do this.
+
+
+      
+
+
+    ",
+        "inLanguage": "en-us",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/renanfernandes.org\/posts\/azure-arc-ubuntu\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "copyrightYear" : "2023",
+        "dateCreated": "2023-09-08T11:32:06.00Z",
+        "datePublished": "2023-09-08T11:32:06.00Z",
+        "dateModified": "2023-09-08T11:32:06.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Renan Mathias Fernandes",
+            "url": "http://renanfernandes.org/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/renanfernandes.org\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "http://renanfernandes.org/images/site-feature-image.png"
+
+
+      
+      ]
+
+    ,
+        "url" : "http:\/\/renanfernandes.org\/posts\/azure-arc-ubuntu\/",
+        "wordCount" : "351",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
 
 </head>
 <body class="body">
@@ -256,8 +332,6 @@
             
             <a
               
-                class="nav__link--active"
-              
               href="/posts/"
               
               title=""
@@ -299,69 +373,54 @@
 </div>
 </header>
   <div
-    class="archive 
+    class="post 
       animated fadeInDown
     "
   >
     
-      <div class="archive__heading">2023</div>
+    <div class="post__content">
+      <h1>Azure Arc Ubuntu</h1>
+      <p>Following the Wireguard series, I wanted to modernize my lab. one quick way to address that is to extend my two networks via Azure Arc so I can manage my resources more adequadely</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#installing-azure-cli">Installing Azure CLI</a></li>
+<li><a href="#creating-the-deployment-script-via-azure-arc-portal">Creating the deployment script via Azure Arc Portal</a></li>
+<li><a href="#running-the-onboarding-script">Running the onboarding script</a></li>
+</ul>
+<h2 id="installing-azure-cli">Installing Azure CLI</h2>
+<p>The steps to install Azure CLI are pretty well described <img src="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli" alt="here"> so I wont take time to do this. however, make sure you have the latest Azure CLI installed.</p>
+<p>One note is that by default, az login will span a web browser to authenticate. If you don&rsquo;t have any available in your setup, you can use <code>az login --use-device-code</code>, which will give you a device code so you can log from any other machine (like when you connect your Streaming Apps/Credentials). Pretty clever.</p>
+<h2 id="creating-the-deployment-script-via-azure-arc-portal">Creating the deployment script via Azure Arc Portal</h2>
+<p>In Azure Portal, Type Azure Arc, then click on &ldquo;Add&rdquo;
+<img src="/images/Azure_Arc_Add.png" alt="Azure Arc Add Infrastructure "></p>
+<p>Then</p>
+<blockquote>
+<p>Servers&gt;Add a Single Server</p>
+</blockquote>
+<p>and fill in the details for your machine.</p>
+<pre tabindex="0"><code>Resource Group: Create new or select existing
+Region: Select Region Closest to your server
+Operating System: Linux
+</code></pre><p>You can also add Physical Location tags to define where the server is located. After you finish you can download the script</p>
+<h2 id="running-the-onboarding-script">Running the onboarding script</h2>
+<p>Download the file to your server, give permissions and run</p>
+<p>This script will do the following :</p>
+<ol>
+<li>Download an installation script from the Microsoft Download Center.</li>
+<li>Configure the package manager to use and trust the packages.microsoft.com repository.</li>
+<li>Download the agent from Microsoft&rsquo;s Linux Software Repository.</li>
+<li>Install the agent on the server.</li>
+<li>Create the Azure Arc-enabled server resource and associate it with the agent.</li>
+</ol>
+<p>Note that during the installation the agent will span a web browser to authenticate. If you don&rsquo;t have any available in your setup, it will give you a device code so you can log from any other machine (like when you connect your Streaming Apps/Credentials). So be on the lookout for any outputs from the script.</p>
+<p>If all goes well, the script will connect the machine to Azure and provide you a link for the machine overview page</p>
+<p><img src="/images/Azure_Arc_Machines.png" alt="Azure Arc Machines"></p>
+</div>
+    <div class="post__footer">
       
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            <a class="archive__list-title" href="/posts/azure-arc-ubuntu/" title="Azure Arc Ubuntu">Azure Arc Ubuntu</a>
-            <div class="archive__list-date">
-              
-                
-                  8/9/2023
-                
 
-              
-            </div>
-          </li>
-        </ul>
       
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            <a class="archive__list-title" href="/posts/pfsense-udm-wiregard/" title="pfSense and UDM-Pro, Happy together with Wiregard">pfSense and UDM-Pro, Happy together with Wiregard</a>
-            <div class="archive__list-date">
-              
-                
-                  20/8/2023
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            <a class="archive__list-title" href="/posts/sentinel-pfsense/" title="Connecting your pfSense to Microsoft Sentinel">Connecting your pfSense to Microsoft Sentinel</a>
-            <div class="archive__list-date">
-              
-                
-                  19/8/2023
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
-        <ul class="archive__list">
-          <li class="archive__list-item">
-            <a class="archive__list-title" href="/posts/my-first-post/" title="Hello World">Hello World</a>
-            <div class="archive__list-date">
-              
-                
-                  15/8/2023
-                
-
-              
-            </div>
-          </li>
-        </ul>
-      
+    </div>
 
     
   </div>
