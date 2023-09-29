@@ -19,7 +19,7 @@ tableOfContents = true
   url = "/posts/"
 
   [[menu.main]]
-  name = "About"
+  name = "whoami"
   weight = 300
-  identifier = "about"
-  url = "/about/"
+  identifier = "whoami"
+  url = "/whoami/"
