@@ -23,3 +23,9 @@ tableOfContents = true
   weight = 300
   identifier = "whoami"
   url = "/whoami/"
+
+  [[menu.main]]
+  name = "Portfolio"
+  weight = 300
+  identifier = "portfolio"
+  url = "/portfolio/"
