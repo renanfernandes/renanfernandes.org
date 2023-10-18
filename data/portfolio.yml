@@ -1,6 +1,6 @@
 portfolioitems:
   # portfolio category
-  - title: Coding Projects
+  - title: Carreer and Projects
     portfolioitem:
       - name: Project 1
         image: '/images/portfolio/code.jpg'

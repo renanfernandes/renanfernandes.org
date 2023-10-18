@@ -25,7 +25,7 @@ tableOfContents = true
   url = "/whoami/"
 
   [[menu.main]]
-  name = "Portfolio"
+  name = "Career and Projects"
   weight = 300
   identifier = "portfolio"
   url = "/portfolio/"
