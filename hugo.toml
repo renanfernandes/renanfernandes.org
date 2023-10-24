@@ -1,0 +1,39 @@
+baseURL = 'http://renanfernandes.org/'
+languageCode = 'en-us'
+title = 'renanfernandes'
+theme = 'anatole'
+tableOfContents = true
+
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 200
+  identifier = "posts"
+  url = "/posts/"
+
+  [[menu.main]]
+  name = "whoami"
+  weight = 300
+  identifier = "whoami"
+
+  [[menu.main]]
+  name = "Career and Projects"
+  weight = 300
+  identifier = "portfolio"
+  url = "/portfolio/"
+  parent = "whoami"
+
+  [[menu.main]]
+  name = "$ whoami"
+  weight = 300
+  identifier = "$ whoami"
+  url = "/whoami/"
+  parent = "whoami"
+
