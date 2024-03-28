@@ -6,7 +6,19 @@
     <description>Recent content on renanfernandes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 Sep 2023 11:32:06 -0400</lastBuildDate><atom:link href="http://renanfernandes.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Mar 2024 09:08:40 -0400</lastBuildDate><atom:link href="http://renanfernandes.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure DNS</title>
+      <link>http://renanfernandes.org/posts/azure-dns/</link>
+      <pubDate>Thu, 28 Mar 2024 09:08:40 -0400</pubDate>
+      
+      <guid>http://renanfernandes.org/posts/azure-dns/</guid>
+      
+        <description>I always used noip to manage my DNS Zones, but as I keep adding additional domains, it has become expensive. Azure charges only $0.50/month for the first 25 DNS zones, so thats a plus compared to $20+ I pay for NoIP. This guide shows how to create a zone and manage inside Azure.
+Table of Contents Creating a new DNS Zone Creating a DNS record Creating CNAME record Final Steps Creating a new DNS Zone Seach for DNS Zones in the search bar and click on Create dns zone.</description>
+      
+    </item>
+    
     <item>
       <title>Whoami</title>
       <link>http://renanfernandes.org/whoami/</link>
