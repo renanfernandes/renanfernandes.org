@@ -1,6 +1,6 @@
 baseURL = 'http://renanfernandes.org/'
 languageCode = 'en-us'
-title = 'renanfernandes'
+title = 'renanfernandes / renanm'
 theme = 'anatole'
 tableOfContents = true
 
