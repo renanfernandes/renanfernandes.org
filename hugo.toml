@@ -4,6 +4,21 @@ title = 'renanfernandes / renanm'
 theme = 'anatole'
 tableOfContents = true
 
+[params]
+displayMode = "dark" # set the darkmode as default
+
+[Languages]
+  [Languages.en]
+  title = "renanfernandes / renanm"
+  weight = 1
+  LanguageName = "EN"
+
+  [Languages.pt-br]
+  title = "renanfernandes / renanm"
+  description = "Líder em Cybersegurança, com 12+ anos de experiência na industria e apaixonado por construir e quebrar coisas"
+  weight = 2
+  LanguageName = "pt-br"
+
 [menu]
 
   [[menu.main]]

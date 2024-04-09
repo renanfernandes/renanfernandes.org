@@ -2,9 +2,9 @@
 <html
   dir="ltr"
   lang="en"
-  data-theme=""
+  data-theme="dark"
   
-    class="html theme--light"
+    class="html theme--dark"
   
 ><head>
   <title>
@@ -16,7 +16,7 @@
   </title>
 
   
-  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.121.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.124.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="author" content="Renan Mathias Fernandes" />
   <meta
     name="description"
@@ -128,7 +128,6 @@ Table of Contents Installing Azure CLI Creating the deployment script via Azure 
 
 
 
-
   
   
   
@@ -150,7 +149,7 @@ Table of Contents Installing Azure CLI Creating the deployment script via Azure 
 
 
     ",
-        "inLanguage": "en-us",
+        "inLanguage": "en",
         "isFamilyFriendly": "true",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -417,16 +416,16 @@ Table of Contents Installing Azure CLI Creating the deployment script via Azure 
       <p>Following the Wireguard series, I wanted to modernize my lab. one quick way to address that is to extend my two networks via Azure Arc so I can manage my resources more adequadely</p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
-<li><a href="#installing-azure-cli">Installing Azure CLI</a></li>
-<li><a href="#creating-the-deployment-script-via-azure-arc-portal">Creating the deployment script via Azure Arc Portal</a></li>
-<li><a href="#running-the-onboarding-script">Running the onboarding script</a></li>
+<li><a href="/posts/azure-arc-ubuntu/#installing-azure-cli">Installing Azure CLI</a></li>
+<li><a href="/posts/azure-arc-ubuntu/#creating-the-deployment-script-via-azure-arc-portal">Creating the deployment script via Azure Arc Portal</a></li>
+<li><a href="/posts/azure-arc-ubuntu/#running-the-onboarding-script">Running the onboarding script</a></li>
 </ul>
 <h2 id="installing-azure-cli">Installing Azure CLI</h2>
-<p>The steps to install Azure CLI are pretty well described <img src="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli" alt="here"> so I wont take time to do this. however, make sure you have the latest Azure CLI installed.</p>
+<p>The steps to install Azure CLI are pretty well described <img alt="here" src="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli"> so I wont take time to do this. however, make sure you have the latest Azure CLI installed.</p>
 <p>One note is that by default, az login will span a web browser to authenticate. If you don&rsquo;t have any available in your setup, you can use <code>az login --use-device-code</code>, which will give you a device code so you can log from any other machine (like when you connect your Streaming Apps/Credentials). Pretty clever.</p>
 <h2 id="creating-the-deployment-script-via-azure-arc-portal">Creating the deployment script via Azure Arc Portal</h2>
 <p>In Azure Portal, Type Azure Arc, then click on &ldquo;Add&rdquo;
-<img src="/images/Azure_Arc_Add.png" alt="Azure Arc Add Infrastructure "></p>
+<img alt="Azure Arc Add Infrastructure " src="/images/Azure_Arc_Add.png"></p>
 <p>Then</p>
 <blockquote>
 <p>Servers&gt;Add a Single Server</p>
@@ -448,7 +447,7 @@ Operating System: Linux
 </ol>
 <p>Note that during the installation the agent will span a web browser to authenticate. If you don&rsquo;t have any available in your setup, it will give you a device code so you can log from any other machine (like when you connect your Streaming Apps/Credentials). So be on the lookout for any outputs from the script.</p>
 <p>If all goes well, the script will connect the machine to Azure and provide you a link for the machine overview page</p>
-<p><img src="/images/Azure_Arc_Machines.png" alt="Azure Arc Machines"></p>
+<p><img alt="Azure Arc Machines" src="/images/Azure_Arc_Machines.png"></p>
 </div>
     <div class="post__footer">
       

@@ -2,9 +2,9 @@
 <html
   dir="ltr"
   lang="en"
-  data-theme=""
+  data-theme="dark"
   
-    class="html theme--light"
+    class="html theme--dark"
   
 ><head>
   <title>
@@ -16,7 +16,7 @@
   </title>
 
   
-  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.121.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.124.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="author" content="Renan Mathias Fernandes" />
   <meta
     name="description"
@@ -128,7 +128,6 @@ While my IPsec tunnel has been working fairly well over the years, now that Ubiq
 
 
 
-
   
   
   
@@ -150,7 +149,7 @@ While my IPsec tunnel has been working fairly well over the years, now that Ubiq
 
 
     ",
-        "inLanguage": "en-us",
+        "inLanguage": "en",
         "isFamilyFriendly": "true",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -419,20 +418,20 @@ While my IPsec tunnel has been working fairly well over the years, now that Ubiq
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
 <li>
-<p><a href="#wireguard-server-udm-pro">Wireguard Server UDM Pro</a></p>
+<p><a href="/posts/pfsense-udm-wiregard/#wireguard-server-udm-pro">Wireguard Server UDM Pro</a></p>
 </li>
 <li>
-<p><a href="#wireguard-client-pfsense">Wireguard Client pfSense</a></p>
+<p><a href="/posts/pfsense-udm-wiregard/#wireguard-client-pfsense">Wireguard Client pfSense</a></p>
 <ul>
-<li><a href="#installing-wireguard-packages">Installing Wireguard Packages</a></li>
-<li><a href="#creating-the-tunnel">Creating the Tunnel</a></li>
-<li><a href="#establishing-the-peer-connection">Establishing the Peer Connection</a></li>
-<li><a href="#creating-the-interface">Creating the interface</a></li>
-<li><a href="#establishing-the-peer-connection">Establishing the Peer Connection</a></li>
+<li><a href="/posts/pfsense-udm-wiregard/#installing-wireguard-packages">Installing Wireguard Packages</a></li>
+<li><a href="/posts/pfsense-udm-wiregard/#creating-the-tunnel">Creating the Tunnel</a></li>
+<li><a href="/posts/pfsense-udm-wiregard/#establishing-the-peer-connection">Establishing the Peer Connection</a></li>
+<li><a href="/posts/pfsense-udm-wiregard/#creating-the-interface">Creating the interface</a></li>
+<li><a href="/posts/pfsense-udm-wiregard/#establishing-the-peer-connection">Establishing the Peer Connection</a></li>
 </ul>
 </li>
 <li>
-<p><a href="#checking-the-handshake">Checking the handshake</a></p>
+<p><a href="/posts/pfsense-udm-wiregard/#checking-the-handshake">Checking the handshake</a></p>
 </li>
 </ul>
 <h2 id="wireguard-server-udm-pro">Wireguard Server (UDM Pro)</h2>
@@ -443,9 +442,9 @@ Setting up Wireguard on UDM Pro is as easy as it gets. Going to</p>
 </blockquote>
 <p>Takes you to the new VPN Server screen. Set the name of your VPN and take notes on your public key. You&rsquo;ll need it later.
 You can configure the Gateway and Network you&rsquo;d like or leave the default settings. If you decide to modify your network settings, use the Advanced. In my case the default settings works fine. So I&rsquo;ll leave it as is</p>
-<p><img src="/images/UDM_Wireguard_Setup_1.png" alt="UDM Wireguard Setup Screen"></p>
+<p><img alt="UDM Wireguard Setup Screen" src="/images/UDM_Wireguard_Setup_1.png"></p>
 <p>Use the <code>Add New Client</code> option to create your new client credentials. Select Manual to modify the default settings. Set up the name of your Client, take notes on the public key again and modify the Interface IP as needed (in case you modified the default network settings)</p>
-<p><img src="/images/UDM_Wireguard_Setup_2.png" alt="UDM Wireguard Add new Client"></p>
+<p><img alt="UDM Wireguard Add new Client" src="/images/UDM_Wireguard_Setup_2.png"></p>
 <p>Believe it or not, you are done! Now lets move to pfSense.</p>
 <h2 id="wireguard-client-pfsense">Wireguard Client (pfSense)</h2>
 <p>Setting up Wireguard on pfSense is a bit more work. This post will only guide through the handshake process. On future posts I&rsquo;ll be showing some interesting use cases, on how to create a kill switch vpn and redirect the traffic from a VLAN to this VPN. Let&rsquo;s setup.</p>
@@ -467,7 +466,7 @@ Listen Port: Leave Blank
 Interface Keys: Use the private and public keys available at the configuration file (you saved this earlier, remember?)
 Private Key: Private key available under the [Interface] section of the configuration file
 Public Key: Public key generated when you created the Client on UDM Pro (its under [Peer] section of the configuration file)
-</code></pre><p><img src="/images/pfSense_Wireguard_Setup_1.png" alt="pfSense Wireguard Tunnel configuration"></p>
+</code></pre><p><img alt="pfSense Wireguard Tunnel configuration" src="/images/pfSense_Wireguard_Setup_1.png"></p>
 <p>After that, click on Save Tunnel</p>
 <h3 id="establishing-the-peer-connection">Establishing the Peer Connection</h3>
 <p>With the tunnel created on pfSense, now its time to create the Peer and establish the connection with UDM Pro. Navigate to</p>
@@ -484,7 +483,7 @@ Port: Set the Port of your UDM Pro Wireguard
 KeepAlive: 25
 Public Key: Enter the public key that you took notes before. This is the public key from the Server, create on step 1
 Allowed IPs: Enter 0.0.0.0/0
-</code></pre><p><img src="/images/pfSense_Wireguard_Setup_1.png" alt="pfSense Wireguard Peer configuration">
+</code></pre><p><img alt="pfSense Wireguard Peer configuration" src="/images/pfSense_Wireguard_Setup_1.png">
 After that, click on Save Peer</p>
 <h3 id="creating-the-interface">Creating the interface</h3>
 <p>Go to</p>
@@ -500,20 +499,20 @@ MSS: 1412
 IPv4 Address: Set the IP Address of the Peer connection defined by UDM Pro
 IPv4 Upstream Gateway: Click on Add a new Gateway and on the Gateway IPv4 field, Set the IP Address of the Peer Connection defined by UDM Pro again.
 </code></pre><p>Click on <code>Save</code> and click the <code>Apply Changes</code> if needed</p>
-<p><img src="/images/pfSense_Wireguard_Setup_3.png" alt="pfSense Wireguard Interface Configuration"></p>
+<p><img alt="pfSense Wireguard Interface Configuration" src="/images/pfSense_Wireguard_Setup_3.png"></p>
 <h2 id="checking-the-handshake">Checking the handshake</h2>
 <p>Head to</p>
 <blockquote>
 <p>VPN&gt;WireGuard&gt;Status</p>
 </blockquote>
 <p>Open the tunnel and verify if the handshake was established. You should see the handshake listed there</p>
-<p><img src="/images/pfSense_Wireguard_Handshake_1.png" alt="pfSense Wireguard Handshake"></p>
+<p><img alt="pfSense Wireguard Handshake" src="/images/pfSense_Wireguard_Handshake_1.png"></p>
 <p>You can also confirm on the UDM Pro End, by logging on</p>
 <blockquote>
 <p>Settings&gt;Teleport &amp; VPN&gt;VPN Server</p>
 </blockquote>
 <p>And checking the # of Active Clients</p>
-<p><img src="/images/UDM_Wireguard_Handshake_1.png" alt="UDM Pro Wireguard Handshake"></p>
+<p><img alt="UDM Pro Wireguard Handshake" src="/images/UDM_Wireguard_Handshake_1.png"></p>
 </div>
     <div class="post__footer">
       

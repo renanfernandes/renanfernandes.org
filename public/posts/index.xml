@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on renanfernandes</title>
+    <title>Posts on renanfernandes / renanm</title>
     <link>http://renanfernandes.org/posts/</link>
-    <description>Recent content in Posts on renanfernandes</description>
+    <description>Recent content in Posts on renanfernandes / renanm</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Thu, 28 Mar 2024 09:08:40 -0400</lastBuildDate><atom:link href="http://renanfernandes.org/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure DNS</title>
@@ -51,7 +51,7 @@ While my IPsec tunnel has been working fairly well over the years, now that Ubiq
       <guid>http://renanfernandes.org/posts/sentinel-pfsense/</guid>
       
         <description>Just a collection of templates, scripts, configuration files and testing observations to make my life easier. This is part of my own GitHub repository (and one of the fews I make public), so use the content and scripts here at your own risk :)
-Table of Contents Integrating Sentinel and Home Infrastructure Syslog server Provisioning the VM Configuring the Syslog Server Creating a Firewall rule to allow incoming traffic to Logstash Configuring pfSense Configuring Log Analytics Workspace Final Step: Sentinel!</description>
+Integrating Sentinel and Home Infrastructure As my home network continues to grow and more and more IoT devices are added, I felt the need to better improve my home security posture and frankly have a better visibilty over what is going on in my network.</description>
       
     </item>
     

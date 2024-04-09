@@ -2,9 +2,9 @@
 <html
   dir="ltr"
   lang="en"
-  data-theme=""
+  data-theme="dark"
   
-    class="html theme--light"
+    class="html theme--dark"
   
 ><head>
   <title>
@@ -16,7 +16,7 @@
   </title>
 
   
-  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.121.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.124.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="author" content="Renan Mathias Fernandes" />
   <meta
     name="description"
@@ -128,7 +128,6 @@ Table of Contents Creating a new DNS Zone Creating a DNS record Creating CNAME r
 
 
 
-
   
   
   
@@ -150,7 +149,7 @@ Table of Contents Creating a new DNS Zone Creating a DNS record Creating CNAME r
 
 
     ",
-        "inLanguage": "en-us",
+        "inLanguage": "en",
         "isFamilyFriendly": "true",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -417,16 +416,16 @@ Table of Contents Creating a new DNS Zone Creating a DNS record Creating CNAME r
       <p>I always used noip to manage my DNS Zones, but as I keep adding additional domains, it has become expensive. Azure charges only $0.50/month for the first 25 DNS zones, so thats a plus compared to $20+ I pay for NoIP. This guide shows how to create a zone and manage inside Azure.</p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
-<li><a href="#creating-a-new-dns-zone">Creating a new DNS Zone</a></li>
-<li><a href="#creating-a-dns-record">Creating a DNS record</a></li>
-<li><a href="#create-cname-record">Creating CNAME record</a></li>
-<li><a href="#final-steps">Final Steps</a></li>
+<li><a href="/posts/azure-dns/#creating-a-new-dns-zone">Creating a new DNS Zone</a></li>
+<li><a href="/posts/azure-dns/#creating-a-dns-record">Creating a DNS record</a></li>
+<li><a href="/posts/azure-dns/#create-cname-record">Creating CNAME record</a></li>
+<li><a href="/posts/azure-dns/#final-steps">Final Steps</a></li>
 </ul>
 <h2 id="creating-a-new-dns-zone">Creating a new DNS Zone</h2>
 <p>Seach for <code>DNS Zones</code> in the search bar and click on <code>Create dns zone</code>.
 Select an existing Resource Group or Create a new one for your resources.
 In instance details Name, type in the domain name you bought from a domain registrar and select the location for your resource group in <em>Resource group location</em> as seen below:</p>
-<p><img src="/images/DNS_Zone1.png" alt="New DNS Zone"></p>
+<p><img alt="New DNS Zone" src="/images/DNS_Zone1.png"></p>
 <p>Add any tags as applicable and then select <code>Create</code></p>
 <h2 id="creating-a-dns-record">Creating a DNS record</h2>
 <p>Now that you have your Zone created, you need to start populating the DNS records. For this example, I will only create a <code>CNAME</code> record to point to my website. If you want to read more about DNS records and types, head to this <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">Wikipedia Article</a></p>
@@ -436,11 +435,11 @@ In instance details Name, type in the domain name you bought from a domain regis
 Type: CNAME
 Alias Record Set: This is a cool option, you can point your DNS record straight to an Azure resource instead. Use it if you like it, or just do the old fashion Alias way.
 TTL: 1 hour
-</code></pre><p><img src="/images/DNS_Record1.png" alt="New DNS Record"></p>
+</code></pre><p><img alt="New DNS Record" src="/images/DNS_Record1.png"></p>
 <p>Click <code>Ok</code> and you are done!</p>
 <h2 id="final-steps">Final Steps</h2>
 <p>You are almost done. The final steps are outside Azure. Make sure you update your registrar to point to Azure DNS records. You will find the Nameserver 1, 2, 3 and 4 inside your DNS zone as seen below:
-<img src="/images/DNS_Zone2.png" alt="Name Servers">
+<img alt="Name Servers" src="/images/DNS_Zone2.png">
 you are done! enjoy your new DNS Zone managed in Azure</p>
 </div>
     <div class="post__footer">

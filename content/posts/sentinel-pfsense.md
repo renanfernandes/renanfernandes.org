@@ -2,22 +2,12 @@
 title: "Connecting your pfSense to Microsoft Sentinel"
 date: 2023-08-19T14:55:27-04:00
 draft: false
+toc: true
 ---
+
 
 Just a collection of templates, scripts, configuration files and testing observations to make my life easier. This is part of my own GitHub repository (and one of the fews I make public), so use the content and scripts here at your own risk :)
 
-Table of Contents
----
-
-* [Integrating Sentinel and Home Infrastructure](#integrating-sentinel-and-home-infrastructure)
-   * [Syslog server](#syslog-server)
-     * [Provisioning the VM](#provisioning-the-vm)
-     * [Configuring the Syslog Server](#configuring-the-syslog-server)
-     * [Creating a Firewall rule to allow incoming traffic to Logstash](#creating-a-firewall-rule-to-allow-incoming-traffic-to-logstash)
-   * [Configuring pfSense](#configuring-pfSense)
-   * [Configuring Log Analytics Workspace](#configuring-log-analytics-workspace)
-   * [Final Step: Sentinel!](#Final-Step-Sentinel)
-     * [First Rule: Detecting lateral movement](#first-rule-detecting-lateral-movement)
 
 ## Integrating Sentinel and Home Infrastructure
 As my home network continues to grow and more and more IoT devices are added, I felt the need to better improve my home security posture and frankly have a better visibilty over what is going on in my network.
