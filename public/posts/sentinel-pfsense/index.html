@@ -6,7 +6,7 @@
   
     class="html theme--dark"
   
-><head>
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <title>
     
       
@@ -82,7 +82,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
 
-  <link rel="canonical" href="http://renanfernandes.org/posts/sentinel-pfsense/" />
+  <link rel="canonical" href="http://localhost:1313/posts/sentinel-pfsense/" />
 
   
   
@@ -111,7 +111,7 @@
 
   
   <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://renanfernandes.org/images/site-feature-image.png" /><meta name="twitter:title" content="Connecting your pfSense to Microsoft Sentinel"/>
+<meta name="twitter:image" content="http://localhost:1313/images/site-feature-image.png" /><meta name="twitter:title" content="Connecting your pfSense to Microsoft Sentinel"/>
 <meta name="twitter:description" content="Just a collection of templates, scripts, configuration files and testing observations to make my life easier. This is part of my own GitHub repository (and one of the fews I make public), so use the content and scripts here at your own risk :)
 Integrating Sentinel and Home Infrastructure As my home network continues to grow and more and more IoT devices are added, I felt the need to better improve my home security posture and frankly have a better visibilty over what is going on in my network."/>
 
@@ -122,7 +122,7 @@ Integrating Sentinel and Home Infrastructure As my home network continues to gro
 <meta property="og:description" content="Just a collection of templates, scripts, configuration files and testing observations to make my life easier. This is part of my own GitHub repository (and one of the fews I make public), so use the content and scripts here at your own risk :)
 Integrating Sentinel and Home Infrastructure As my home network continues to grow and more and more IoT devices are added, I felt the need to better improve my home security posture and frankly have a better visibilty over what is going on in my network." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://renanfernandes.org/posts/sentinel-pfsense/" /><meta property="og:image" content="http://renanfernandes.org/images/site-feature-image.png" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://localhost:1313/posts/sentinel-pfsense/" /><meta property="og:image" content="http://localhost:1313/images/site-feature-image.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-08-19T14:55:27-04:00" />
 <meta property="article:modified_time" content="2023-08-19T14:55:27-04:00" /><meta property="og:site_name" content="Hi, I&#39;m Renan" />
 
@@ -153,7 +153,7 @@ Integrating Sentinel and Home Infrastructure As my home network continues to gro
         "isFamilyFriendly": "true",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/renanfernandes.org\/posts\/sentinel-pfsense\/"
+            "@id": "http:\/\/localhost:1313\/posts\/sentinel-pfsense\/"
         },
         "author" : {
             "@type": "Person",
@@ -178,10 +178,10 @@ Integrating Sentinel and Home Infrastructure As my home network continues to gro
         "publisher":{
             "@type":"Organization",
             "name": "Renan Mathias Fernandes",
-            "url": "http://renanfernandes.org/",
+            "url": "http://localhost:1313/",
             "logo": {
                 "@type": "ImageObject",
-                "url": "http:\/\/renanfernandes.org\/favicons\/favicon-32x32.png",
+                "url": "http:\/\/localhost:1313\/favicons\/favicon-32x32.png",
                 "width":"32",
                 "height":"32"
             }
@@ -189,14 +189,14 @@ Integrating Sentinel and Home Infrastructure As my home network continues to gro
         "image": 
       [
         
-        "http://renanfernandes.org/images/site-feature-image.png"
+        "http://localhost:1313/images/site-feature-image.png"
 
 
       
       ]
 
     ,
-        "url" : "http:\/\/renanfernandes.org\/posts\/sentinel-pfsense\/",
+        "url" : "http:\/\/localhost:1313\/posts\/sentinel-pfsense\/",
         "wordCount" : "1744",
         "genre" : [ ],
         "keywords" : [ ]
@@ -439,12 +439,19 @@ Integrating Sentinel and Home Infrastructure As my home network continues to gro
       <h3>Table of Contents</h3>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#integrating-sentinel-and-home-infrastructure">Integrating Sentinel and Home Infrastructure</a>
+    <li><a href="#integrating-sentinel-and-home-infrastructure">Integrating Sentinel and Home Infrastructure</a></li>
+    <li><a href="#syslog-server">Syslog server</a>
       <ul>
-        <li><a href="#syslog-server">Syslog server</a></li>
-        <li><a href="#configuring-pfsense">Configuring pfSense</a></li>
-        <li><a href="#configuring-log-analytics-workspace">Configuring Log Analytics Workspace</a></li>
-        <li><a href="#final-step-sentinel">Final Step: Sentinel!</a></li>
+        <li><a href="#provisioning-the-vm">Provisioning the VM</a></li>
+        <li><a href="#configuring-the-syslog-server">Configuring the Syslog Server</a></li>
+        <li><a href="#creating-a-firewall-rule-to-allow-incoming-traffic-to-logstash">Creating a Firewall rule to allow incoming traffic to Logstash</a></li>
+      </ul>
+    </li>
+    <li><a href="#configuring-pfsense">Configuring pfSense</a></li>
+    <li><a href="#configuring-log-analytics-workspace">Configuring Log Analytics Workspace</a></li>
+    <li><a href="#final-step-sentinel">Final Step: Sentinel!</a>
+      <ul>
+        <li><a href="#first-rule-detecting-lateral-movement">First Rule: Detecting lateral movement</a></li>
       </ul>
     </li>
   </ul>
@@ -464,15 +471,15 @@ This is all ultimately controlled by pfSense running on my Netgate SG-1100. I am
 My syslog data will be stored on Log Analytics Workspace that in the end will be added to Sentinel for Ingestion and Analysis.</p>
 <p>So lets start!</p>
 <p><em>Disclaimer: This guide is merely a collection and notes of my experience doing this fun project. I used several resources and references to build this guide, such as: this amazing <a href="https://techcommunity.microsoft.com/t5/microsoft-sentinel/pfsense-syslog-to-azure-sentinel-guide/m-p/2004352">Microsoft Tech Community Post</a> and this great <a href="https://github.com/noodlemctwoodle/pf-azure-sentinel/tree/main/Logstash-Configuration">repository</a> maintained by noodlemctwoodle. I&rsquo;ve updated the instructions below with the latest configurations and changes required.</em></p>
-<h3 id="syslog-server">Syslog server</h3>
+<h2 id="syslog-server">Syslog server</h2>
 <p>First of all, we need a place to host our Syslog server. The way it works is that your Firewall (in my case my Netgate SG-1100) will send its logs to the Syslog server, that wil eventually relay the logs to Azure Sentinel.</p>
 <p>You can run either a Windows or Linux server for your Syslog server and you can host on premise or in the cloud. Since my final goal is to ship the logs to Sentinel, I decided to create a Linux VM and host in Azure.</p>
 <p>This will give room to expand and allow me to connect my servers overseas to this infrastructure, but thats a topic for another day.</p>
-<h4 id="provisioning-the-vm">Provisioning the VM</h4>
+<h3 id="provisioning-the-vm">Provisioning the VM</h3>
 <p>Since I am not doing anything fancy and all I need is to collect syslogs, I provisioned a single VM with Ubuntu 21.10 and used <strong>Standard_B2s</strong> size. Which gives me 2 vCPUs and 4 GB of RAM at East US 2 Region. Costing me approximately $30.37/month, not bad!</p>
 <p><img alt="Syslog Configuration" src="/images/syslog-azure1.png"></p>
 <p>Now that your VM is up, its time to configure Rsyslog Server</p>
-<h4 id="configuring-the-syslog-server">Configuring the Syslog Server</h4>
+<h3 id="configuring-the-syslog-server">Configuring the Syslog Server</h3>
 <p>First things first&hellip; Ensure you have the most up-to-date version of your packages and OS by running apt update:</p>
 <pre tabindex="0"><code>sudo apt update
 sudo apt upgrade
@@ -534,12 +541,12 @@ sudo wget https://raw.githubusercontent.com/noodlemctwoodle/pfsense-azure-sentin
 sudo service logstash start
 sudo tcpdump -A -ni any port 5140 -v
 </code></pre><p>Keep this terminal up so you can check if you are receiving packages once you finish the pfSense configuration</p>
-<h4 id="creating-a-firewall-rule-to-allow-incoming-traffic-to-logstash">Creating a Firewall rule to allow incoming traffic to Logstash</h4>
+<h3 id="creating-a-firewall-rule-to-allow-incoming-traffic-to-logstash">Creating a Firewall rule to allow incoming traffic to Logstash</h3>
 <p>We are almost there. Now you need to allow incoming connections to port 5140, so your pfSense can report logs to Logstash.</p>
 <p>On Azure Portal, go to your VM &gt; Networking and add the following Rule:</p>
 <p><img alt="Syslog Network Firewall Rule" src="/images/syslog-azure2.png"></p>
 <p>Be advised that you should also restrict the Source Ip to ensure that only your pfSense is allowed to send logs to logstash. I&rsquo;m ommiting the IP address here for obvious reasons.</p>
-<h3 id="configuring-pfsense">Configuring pfSense</h3>
+<h2 id="configuring-pfsense">Configuring pfSense</h2>
 <p>The final and last step of this configuration is to allow pfSense to ship the logs to your Syslog server.</p>
 <p>In pfSense navigate to Status -&gt; System Logs -&gt; Settings.</p>
 <p>General Logging Options.</p>
@@ -560,7 +567,7 @@ General Logging Options &gt; Log firewall default blocks. (optional)</p>
 <li>Enter the Logstash server local IP into the field Remote log servers with port 5140. (e.g. 192.168.1.50:5140)</li>
 <li>Under &ldquo;Remote Syslog Contents&rdquo; check &ldquo;Everything&rdquo;.</li>
 </ol>
-<h3 id="configuring-log-analytics-workspace">Configuring Log Analytics Workspace</h3>
+<h2 id="configuring-log-analytics-workspace">Configuring Log Analytics Workspace</h2>
 <p>Log on Azure Portal and go to <code>Log Analytics workspace</code> settings.
 Select <code>Agents Management</code> and make a note of your <code>Workspace ID</code> and <code>Primary Key</code>. If you don&rsquo;t have a Log Analytics Workspace, now is the time to create one!
 Install the Microsoft Logstash LogAnalytics plugin by using the following command:</p>
@@ -577,11 +584,11 @@ Install the Microsoft Logstash LogAnalytics plugin by using the following comman
 <pre tabindex="0"><code>sudo systemctl enable logstash
 sudo systemctl start logstash
 </code></pre><p>Within a few minutes you should start seeing events hitting Log Analytics</p>
-<h3 id="final-step-sentinel">Final Step: Sentinel!</h3>
+<h2 id="final-step-sentinel">Final Step: Sentinel!</h2>
 <p>If you haven&rsquo;t done it yet, Add Microsoft Sentinel to your Log Analytics workspace. After some minutes you&rsquo;ll start seeing the events hitting Sentinel</p>
 <p><img alt="Sentinel Screenshot" src="/images/sentinel1.png"></p>
 <p>As you can see, I have a rule called &ldquo;IoT Devices Trying to do something strange&rdquo;. To ilustrate some basic capabilities, I&rsquo;ll show below how to create a simple KQL query to detect if my IoT devices, that are sitting on my IoT VLAN tries to reach out my Trusted VLAN.</p>
-<h4 id="first-rule-detecting-lateral-movement">First Rule: Detecting lateral movement</h4>
+<h3 id="first-rule-detecting-lateral-movement">First Rule: Detecting lateral movement</h3>
 <p>In Sentinel, navigate to Logs and create a new query similar to this one:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">//</span> Blocked IoT devices trying <span style="color:#66d9ef">to</span> communicate <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">Trusted</span> VLAN
 </span></span><span style="display:flex;"><span>pfSenseLogstash_CL

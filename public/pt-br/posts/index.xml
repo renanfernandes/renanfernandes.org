@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on renanfernandes / renanm</title>
-    <link>http://renanfernandes.org/pt-br/posts/</link>
+    <link>http://localhost:1313/pt-br/posts/</link>
     <description>Recent content in Posts on renanfernandes / renanm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 19 Aug 2023 14:55:27 -0400</lastBuildDate><atom:link href="http://renanfernandes.org/pt-br/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Aug 2023 14:55:27 -0400</lastBuildDate><atom:link href="http://localhost:1313/pt-br/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Conectando seu pfSense ao Microsoft Sentinel</title>
-      <link>http://renanfernandes.org/pt-br/posts/sentinel-pfsense/</link>
+      <link>http://localhost:1313/pt-br/posts/sentinel-pfsense/</link>
       <pubDate>Sat, 19 Aug 2023 14:55:27 -0400</pubDate>
       
-      <guid>http://renanfernandes.org/pt-br/posts/sentinel-pfsense/</guid>
+      <guid>http://localhost:1313/pt-br/posts/sentinel-pfsense/</guid>
       
         <description>Apenas uma coleção de modelos, scripts, arquivos de configuração e observações de teste para facilitar minha vida. Isso faz parte do meu próprio repositório no GitHub (e um dos poucos que eu torno público), então use o conteúdo e scripts aqui por sua própria conta e risco :)
-Integrando o Sentinel e a Infraestrutura Residencial À medida que minha rede residencial continua a crescer e mais dispositivos IoT são adicionados, senti a necessidade de melhorar minha postura de segurança residencial e, francamente, ter uma melhor visibilidade sobre o que está acontecendo em minha rede.</description>
+Integrando Sentinel e a Infraestrutura Residencial À medida que minha rede residencial continua a crescer e mais dispositivos IoT são adicionados, senti a necessidade de melhorar minha postura de segurança residencial e, francamente, ter uma melhor visibilidade sobre o que está acontecendo em minha rede.</description>
       
     </item>
     

@@ -7,6 +7,10 @@ tableOfContents = true
 [params]
 displayMode = "dark" # set the darkmode as default
 
+[services]
+  [services.disqus]
+    shortname = 'renanmathiasfernandes'
+
 [Languages]
   [Languages.en]
   title = "renanfernandes / renanm"

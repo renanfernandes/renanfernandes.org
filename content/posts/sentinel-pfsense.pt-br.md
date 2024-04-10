@@ -8,7 +8,7 @@ toc: true
 
 Apenas uma coleção de modelos, scripts, arquivos de configuração e observações de teste para facilitar minha vida. Isso faz parte do meu próprio repositório no GitHub (e um dos poucos que eu torno público), então use o conteúdo e scripts aqui por sua própria conta e risco :)
 
-Integrando o Sentinel e a Infraestrutura Residencial
+Integrando Sentinel e a Infraestrutura Residencial
 À medida que minha rede residencial continua a crescer e mais dispositivos IoT são adicionados, senti a necessidade de melhorar minha postura de segurança residencial e, francamente, ter uma melhor visibilidade sobre o que está acontecendo em minha rede.
 
 Para começar, o diagrama abaixo mostra como minha rede residencial está atualmente configurada. Sem entrar em muitos detalhes, tenho três VLANs, 1) IoT, 2) Rede Confiável, 3) Servidores e 4) Rede Não Confiável/Hóspedes.
@@ -33,21 +33,21 @@ Então vamos lá!
 
 *Aviso Legal: Este guia é apenas uma coleção e notas da minha experiência neste projeto divertido. Usei vários recursos e referências para construir este guia, como: este incrível [Post da Comunidade Técnica da Microsoft](https://techcommunity.microsoft.com/t5/microsoft-sentinel/pfsense-syslog-to-azure-sentinel-guide/m-p/2004352) e este ótimo [repositório](https://github.com/noodlemctwoodle/pf-azure-sentinel/tree/main/Logstash-Configuration) mantido por noodlemctwoodle. Atualizei as instruções abaixo com as últimas configurações e alterações necessárias.*
 
-### Servidor Syslog
+## Servidor Syslog
 Antes de tudo, precisamos de um local para hospedar nosso servidor Syslog. A maneira como funciona é que seu Firewall (no meu caso, meu Netgate SG-1100) enviará seus logs para o servidor Syslog, que eventualmente encaminhará os logs para o Azure Sentinel.
 
 Você pode executar um servidor Windows ou Linux para seu servidor Syslog e pode hospedar localmente ou na nuvem. Como meu objetivo final é enviar os logs para o Sentinel, decidi criar uma VM Linux e hospedar no Azure.
 
 Isso dará espaço para expandir e me permitirá conectar meus servidores no exterior a esta infraestrutura, mas isso é assunto para outro dia.
 
-#### Provisionamento da VM
+### Provisionamento da VM
 Como não estou fazendo nada complicado e tudo o que preciso é coletar syslog, provisionei uma única VM com Ubuntu 21.10 e usei o tamanho **Standard_B2s**. Isso me dá 2 vCPUs e 4 GB de RAM na Região East US 2. Custando aproximadamente US$ 30,37/mês, não é ruim!
 
 ![Configuração do Syslog](/images/syslog-azure1.png)
 
 Agora que sua VM está pronta, é hora de configurar o Servidor Rsyslog.
 
-#### Configurando o Servidor Syslog
+### Configurando o Servidor Syslog
 Primeiro as coisas mais básicas... Certifique-se de ter a versão mais atualizada de seus pacotes e SO executando `apt update` e `apt upgrade`:
 ```
 sudo apt update
@@ -171,7 +171,7 @@ sudo tcpdump -A -ni any port 5140 -v
 
 Mantenha este terminal aberto para poder verificar se está recebendo pacotes assim que terminar a configuração do pfSense
 
-#### Criando uma regra de firewall para permitir o tráfego de entrada para o Logstash
+### Criando uma regra de firewall para permitir o tráfego de entrada para o Logstash
 Estamos quase lá. Agora você precisa permitir conexões de entrada na porta 5140, para que seu pfSense possa relatar logs para o Logstash.
 
 No Portal Azure, vá para sua VM > Networking e adicione a seguinte Regra:
@@ -180,7 +180,7 @@ No Portal Azure, vá para sua VM > Networking e adicione a seguinte Regra:
 
 Esteja ciente de que você também deve restringir o IP de origem para garantir que apenas seu pfSense possa enviar logs para o logstash. Estou omitindo o endereço IP aqui por razões óbvias.
 
-### Configurando pfSense
+## Configurando pfSense
 O último e derradeiro passo desta configuração é permitir que o pfSense envie os logs para o seu servidor Syslog.
 
 No pfSense, navegue até Status -> System Logs -> Settings.
@@ -204,7 +204,7 @@ Remote Logging Options:
 4. Enter the Logstash server local IP into the field Remote log servers with port 5140. (e.g. 192.168.1.50:5140)
 5. Under "Remote Syslog Contents" check "Everything".
 
-### Configurando Log Analytics Workspace
+## Configurando Log Analytics Workspace
 
 Faça login no Portal Azure e vá para as configurações do `Log Analytics workspace`.
 Selecione `Gerenciamento de Agentes` e anote o `ID do Workspace` e a `Chave Primária`. Se você ainda não tem um Log Analytics Workspace, agora é a hora de criar um!
@@ -233,7 +233,7 @@ sudo systemctl start logstash
 
 Dentro de alguns minutos, você deverá começar a ver eventos chegando ao Log Analytics
 
-### Última Etapa: Sentinel!
+## Última Etapa: Sentinel!
 Se você ainda não o fez, adicione o Microsoft Sentinel ao seu espaço de trabalho do Log Analytics. Depois de alguns minutos, você começará a ver os eventos chegando ao Sentinel
 
 ![Captura de Tela do Sentinel](/images/sentinel1.png)
@@ -241,7 +241,7 @@ Se você ainda não o fez, adicione o Microsoft Sentinel ao seu espaço de traba
 Como você pode ver, tenho uma regra chamada "IoT Devices Trying to do something strange". Para ilustrar algumas capacidades básicas, mostrarei abaixo como criar uma consulta KQL simples para detectar se meus dispositivos IoT, que estão na minha VLAN IoT, tentam alcançar minha VLAN Confiável.
 
 
-#### Primeira Regra: Detectando movimentação lateral
+### Primeira Regra: Detectando movimentação lateral
 No Sentinel, navegue até Logs e crie uma nova busca semelhante a esta:
 
 ```SQL
