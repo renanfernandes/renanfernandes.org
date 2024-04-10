@@ -2,17 +2,10 @@
 title: "Azure DNS"
 date: 2024-03-28T09:08:40-04:00
 draft: false
+toc: true
 ---
 
 I always used noip to manage my DNS Zones, but as I keep adding additional domains, it has become expensive. Azure charges only $0.50/month for the first 25 DNS zones, so thats a plus compared to $20+ I pay for NoIP. This guide shows how to create a zone and manage inside Azure.
-
-Table of Contents
----
-
-* [Creating a new DNS Zone](#creating-a-new-dns-zone)
-* [Creating a DNS record](#creating-a-dns-record)
- * [Creating CNAME record](#create-cname-record)
-* [Final Steps](#final-steps)
 
 ## Creating a new DNS Zone
 Seach for `DNS Zones` in the search bar and click on `Create dns zone`.
