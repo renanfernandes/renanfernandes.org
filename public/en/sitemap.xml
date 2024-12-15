@@ -2,87 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/azure-dns/</loc>
-    <lastmod>2024-03-28T09:08:40-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2024-03-28T09:08:40-04:00</lastmod>
+    <loc>http://renanfernandes.org/posts/</loc>
+    <lastmod>2024-12-15T10:48:34-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://localhost:1313/pt-br/posts/"
+                href="http://renanfernandes.org/pt-br/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/posts/"
+                href="http://renanfernandes.org/posts/"
                 />
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2024-03-28T09:08:40-04:00</lastmod>
+    <loc>http://renanfernandes.org/posts/protect-fingerprint-homeassistant/</loc>
+    <lastmod>2024-12-15T10:48:34-05:00</lastmod>
+  </url><url>
+    <loc>http://renanfernandes.org/</loc>
+    <lastmod>2024-12-15T10:48:34-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://localhost:1313/pt-br/"
+                href="http://renanfernandes.org/pt-br/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/"
+                href="http://renanfernandes.org/"
                 />
   </url><url>
-    <loc>http://localhost:1313/whoami/</loc>
+    <loc>http://renanfernandes.org/posts/azure-dns/</loc>
+    <lastmod>2024-03-28T09:08:40-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="http://renanfernandes.org/pt-br/posts/azure-dns/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://renanfernandes.org/posts/azure-dns/"
+                />
+  </url><url>
+    <loc>http://renanfernandes.org/whoami/</loc>
     <lastmod>2023-09-29T09:02:41-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/azure-arc-ubuntu/</loc>
+    <loc>http://renanfernandes.org/posts/azure-arc-ubuntu/</loc>
     <lastmod>2023-09-08T11:32:06-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/pfsense-udm-wiregard/</loc>
+    <loc>http://renanfernandes.org/posts/pfsense-udm-wiregard/</loc>
     <lastmod>2023-08-20T16:28:38-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/sentinel-pfsense/</loc>
+    <loc>http://renanfernandes.org/posts/sentinel-pfsense/</loc>
     <lastmod>2023-08-19T14:55:27-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://localhost:1313/pt-br/posts/sentinel-pfsense/"
+                href="http://renanfernandes.org/pt-br/posts/sentinel-pfsense/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/posts/sentinel-pfsense/"
+                href="http://renanfernandes.org/posts/sentinel-pfsense/"
                 />
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>http://renanfernandes.org/about/</loc>
     <lastmod>2023-08-16T14:16:11-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/my-first-post/</loc>
+    <loc>http://renanfernandes.org/posts/my-first-post/</loc>
     <lastmod>2023-08-15T11:05:30-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://localhost:1313/pt-br/categories/"
+                href="http://renanfernandes.org/pt-br/posts/my-first-post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/categories/"
+                href="http://renanfernandes.org/posts/my-first-post/"
                 />
   </url><url>
-    <loc>http://localhost:1313/portfolio/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://renanfernandes.org/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://localhost:1313/pt-br/tags/"
+                href="http://renanfernandes.org/pt-br/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/tags/"
+                href="http://renanfernandes.org/categories/"
+                />
+  </url><url>
+    <loc>http://renanfernandes.org/portfolio/</loc>
+  </url><url>
+    <loc>http://renanfernandes.org/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="http://renanfernandes.org/pt-br/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://renanfernandes.org/tags/"
                 />
   </url>
 </urlset>
