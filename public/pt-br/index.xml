@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>renanfernandes / renanm</title>
-    <link>http://renanfernandes.org/pt-br/</link>
+    <link>http://localhost:1313/pt-br/</link>
     <description>Recent content on renanfernandes / renanm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Thu, 28 Mar 2024 09:08:40 -0400</lastBuildDate><atom:link href="http://renanfernandes.org/pt-br/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Mar 2024 09:08:40 -0400</lastBuildDate><atom:link href="http://localhost:1313/pt-br/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure DNS</title>
-      <link>http://renanfernandes.org/pt-br/posts/azure-dns/</link>
+      <link>http://localhost:1313/pt-br/posts/azure-dns/</link>
       <pubDate>Thu, 28 Mar 2024 09:08:40 -0400</pubDate>
       
-      <guid>http://renanfernandes.org/pt-br/posts/azure-dns/</guid>
+      <guid>http://localhost:1313/pt-br/posts/azure-dns/</guid>
       
         <description>&lt;p&gt;Eu sempre usei o noip para gerenciar minhas Zonas DNS, mas conforme continuo adicionando domínios adicionais, isso se tornou caro. A Azure cobra apenas $0.50/mês pelas primeiras 25 zonas DNS, então isso é uma vantagem em comparação com os mais de $20 que pago pelo NoIP. Este guia mostra como criar uma zona e gerenciá-la dentro da Azure.&lt;/p&gt;
 &lt;h2 id=&#34;criando-uma-nova-zona-dns&#34;&gt;Criando uma nova Zona DNS&lt;/h2&gt;
@@ -24,10 +24,10 @@ Nos detalhes da instância, digite o nome de domínio que você comprou de um re
     
     <item>
       <title>Conectando seu pfSense ao Microsoft Sentinel</title>
-      <link>http://renanfernandes.org/pt-br/posts/sentinel-pfsense/</link>
+      <link>http://localhost:1313/pt-br/posts/sentinel-pfsense/</link>
       <pubDate>Sat, 19 Aug 2023 14:55:27 -0400</pubDate>
       
-      <guid>http://renanfernandes.org/pt-br/posts/sentinel-pfsense/</guid>
+      <guid>http://localhost:1313/pt-br/posts/sentinel-pfsense/</guid>
       
         <description>&lt;p&gt;Apenas uma coleção de modelos, scripts, arquivos de configuração e observações de teste para facilitar minha vida. Isso faz parte do meu próprio repositório no GitHub (e um dos poucos que eu torno público), então use o conteúdo e scripts aqui por sua própria conta e risco :)&lt;/p&gt;
 &lt;p&gt;Integrando Sentinel e a Infraestrutura Residencial
@@ -37,10 +37,10 @@ Nos detalhes da instância, digite o nome de domínio que você comprou de um re
     
     <item>
       <title>Hello World</title>
-      <link>http://renanfernandes.org/pt-br/posts/my-first-post/</link>
+      <link>http://localhost:1313/pt-br/posts/my-first-post/</link>
       <pubDate>Tue, 15 Aug 2023 11:05:30 -0400</pubDate>
       
-      <guid>http://renanfernandes.org/pt-br/posts/my-first-post/</guid>
+      <guid>http://localhost:1313/pt-br/posts/my-first-post/</guid>
       
         <description>&lt;h1 id=&#34;olá-mundo&#34;&gt;Olá Mundo&lt;/h1&gt;
 &lt;p&gt;Primeiro post &lt;strong&gt;olá!&lt;/strong&gt;&lt;/p&gt;</description>
