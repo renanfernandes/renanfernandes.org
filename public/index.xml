@@ -14,7 +14,8 @@
       
       <guid>http://localhost:1313/posts/dynamic-dns-azure/</guid>
       
-        <description>&lt;p&gt;After I &lt;a href=&#34;http://localhost:1313/posts/azure-dns/&#34;&gt;azure&lt;/a&gt;    I always used noip to manage my DNS Zones, but as I keep adding additional domains, it has become expensive. Azure charges only $0.50/month for the first 25 DNS zones, so thats a plus compared to $20+ I pay for NoIP. This guide shows how to create a zone and manage inside Azure.&lt;/p&gt;</description>
+        <description>&lt;p&gt;After I &lt;a href=&#34;http://localhost:1313/posts/azure-dns/&#34;&gt;migrated my DNS records to Azure&lt;/a&gt;, a problem came up: I have some machines sitting on a remote location with Dynamic IP addresses. In the past I could have easily use the DynDNS service from NoIP to reach out to these machines whenever I wanted to, but after I moved them over to Azure, I needed to replicate the same functionality somehow.
+This post will show you how to accomplish that. By creating an easy     I always used noip to manage my DNS Zones, but as I keep adding additional domains, it has become expensive. Azure charges only $0.50/month for the first 25 DNS zones, so thats a plus compared to $20+ I pay for NoIP. This guide shows how to create a zone and manage inside Azure.&lt;/p&gt;</description>
       
     </item>
     
