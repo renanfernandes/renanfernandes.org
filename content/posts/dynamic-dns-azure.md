@@ -1,7 +1,7 @@
 ---
 title: "Dynamic DNS on Azure"
 date: 2024-12-15T10:48:34-05:00
-draft: false
+draft: true
 toc: true
 ---
 
