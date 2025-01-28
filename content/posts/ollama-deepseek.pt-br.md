@@ -1,5 +1,5 @@
 ---
-title: "OLlama Deepseek"
+title: "Controle Total do DeepSeek R1: Passo a Passo para Instalação Local"
 date: 2025-01-28T17:36:42-05:00
 draft: false
 toc: true

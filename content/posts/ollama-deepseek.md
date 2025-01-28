@@ -1,5 +1,5 @@
 ---
-title: "OLlama Deepseek"
+title: "Take Control of DeepSeek R1: A Step-by-Step Local Setup"
 date: 2025-01-28T17:36:42-05:00
 draft: false
 toc: true
