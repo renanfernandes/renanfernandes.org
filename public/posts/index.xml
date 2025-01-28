@@ -6,7 +6,18 @@
     <description>Recent content in Posts on renanfernandes / renanm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 15 Dec 2024 10:48:34 -0500</lastBuildDate><atom:link href="http://renanm.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jan 2025 17:36:42 -0500</lastBuildDate><atom:link href="http://renanm.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OLlama Deepseek</title>
+      <link>http://renanm.com/posts/ollama-deepseek/</link>
+      <pubDate>Tue, 28 Jan 2025 17:36:42 -0500</pubDate>
+      
+      <guid>http://renanm.com/posts/ollama-deepseek/</guid>
+      
+        <description>&lt;p&gt;There&amp;rsquo;s a lot of chatter about DeepSeek R1 and how it is disrupting the &lt;a href=&#34;https://www.theverge.com/ai-artificial-intelligence/598846/deepseek-big-tech-ai-industry-nvidia-impac&#34;&gt;tech markets this week&lt;/a&gt; (Jan 27, 2025), as well as concerns about how &lt;a href=&#34;https://www.wired.com/story/deepseek-ai-china-privacy-data/&#34;&gt;DeepSeek collects your data&lt;/a&gt;. After all, their privacy policy explicitly states that it stores collected information on servers located in the People’s Republic of China. This includes user inputs such as chat messages, device information, and interaction data. Critics are concerned about the potential for content censorship and the misuse of collected data by the Chinese government.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Azure DNS</title>
       <link>http://renanm.com/posts/azure-dns/</link>
