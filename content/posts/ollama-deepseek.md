@@ -60,4 +60,6 @@ Running DeepSeek R1 locally using Ollama is a great way to explore this AI model
 
 If you're new to AI models, I recommend starting with a smaller model to test your system's performance before scaling up. Whether you're using a model for research, development, or curiosity, running it locally ensures that you stay in control of your data. 
 
+Ah! Take the opportunity to also test Microsoft’s [phi-4](https://ollama.com/library/phi4) this small model is powerful and delivers excellent performance.
+
 Try it out !
