@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://renanm.com/posts/ollama-deepseek/</loc>
-    <lastmod>2025-01-28T17:36:42-05:00</lastmod>
-  </url><url>
     <loc>http://renanm.com/posts/</loc>
     <lastmod>2025-01-28T17:36:42-05:00</lastmod>
     <xhtml:link
@@ -29,6 +26,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://renanm.com/"
+                />
+  </url><url>
+    <loc>http://renanm.com/posts/ollama-deepseek/</loc>
+    <lastmod>2025-01-28T17:36:42-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="http://renanm.com/pt-br/posts/ollama-deepseek/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://renanm.com/posts/ollama-deepseek/"
                 />
   </url><url>
     <loc>http://renanm.com/posts/azure-dns/</loc>

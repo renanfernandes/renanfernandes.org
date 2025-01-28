@@ -6,7 +6,18 @@
     <description>Recent content on renanfernandes / renanm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Thu, 28 Mar 2024 09:08:40 -0400</lastBuildDate><atom:link href="http://renanm.com/pt-br/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jan 2025 17:36:42 -0500</lastBuildDate><atom:link href="http://renanm.com/pt-br/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Controle Total do DeepSeek R1: Passo a Passo para Instalação Local</title>
+      <link>http://renanm.com/pt-br/posts/ollama-deepseek/</link>
+      <pubDate>Tue, 28 Jan 2025 17:36:42 -0500</pubDate>
+      
+      <guid>http://renanm.com/pt-br/posts/ollama-deepseek/</guid>
+      
+        <description>&lt;p&gt;Essa semana uma startup Chinesa movimentou o mercado de tecnologia com o DeekSeek R1, um novo modelo que está revolucionando os &lt;a href=&#34;https://www.theverge.com/ai-artificial-intelligence/598846/deepseek-big-tech-ai-industry-nvidia-impac&#34;&gt;mercados essa semana&lt;/a&gt; (27 de janeiro de 2025), e causando preocupações sobre como o &lt;a href=&#34;https://www.wired.com/story/deepseek-ai-china-privacy-data/&#34;&gt;DeepSeek coleta seus dados&lt;/a&gt;. Afinal, sua política de privacidade afirma explicitamente que as informações coletadas são armazenadas em servidores localizados na República Popular da China. Isso inclui entradas dos usuários, como mensagens de chat, informações do dispositivo e dados de interação. Críticos estão preocupados com o potencial de censura de conteúdo e o uso indevido de dados coletados pelo governo chinês.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Azure DNS</title>
       <link>http://renanm.com/pt-br/posts/azure-dns/</link>
