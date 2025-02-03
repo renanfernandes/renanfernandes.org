@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on renanfernandes / renanm</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>http://renanm.com/posts/</link>
     <description>Recent content in Posts on renanfernandes / renanm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Feb 2025 11:36:42 -0500</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Feb 2025 11:36:42 -0500</lastBuildDate><atom:link href="http://renanm.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Keep Your DNS Up-to-Date with Azure: A Dynamic DNS Script for Linux</title>
-      <link>http://localhost:1313/posts/keep-your-dns-uptodate-with-azure/</link>
+      <link>http://renanm.com/posts/keep-your-dns-uptodate-with-azure/</link>
       <pubDate>Mon, 03 Feb 2025 11:36:42 -0500</pubDate>
       
-      <guid>http://localhost:1313/posts/keep-your-dns-uptodate-with-azure/</guid>
+      <guid>http://renanm.com/posts/keep-your-dns-uptodate-with-azure/</guid>
       
         <description>&lt;p&gt;Keeping your DNS records current is a must if you&amp;rsquo;re running services on a dynamic IP address.
-After I moved my &lt;a href=&#34;http://localhost:1313/posts/azure-dns/&#34;&gt;DNS Zone from NoIP to Azure &lt;/a&gt;, I needed to have a reliable way to update the DNS record of one of my machines overseas. As theres no &amp;ldquo;native&amp;rdquo; dyndns client solution for Azure, the task was to build my own. Which is not as bad as it sounds.&lt;/p&gt;
+After I moved my &lt;a href=&#34;http://renanm.com/posts/azure-dns/&#34;&gt;DNS Zone from NoIP to Azure &lt;/a&gt;, I needed to have a reliable way to update the DNS record of one of my machines overseas. As theres no &amp;ldquo;native&amp;rdquo; dyndns client solution for Azure, the task was to build my own. Which is not as bad as it sounds.&lt;/p&gt;
 &lt;p&gt;In this post, I&amp;rsquo;ll introduce a Python script that automatically updates your Azure DNS record with your machine’s latest public IP address. The best part? The configuration is secure—sensitive details like your Azure subscription and DNS settings are stored in environment variables. You can check out the full code on my GitHub repository: &lt;a href=&#34;https://github.com/renanfernandes/my-stuff/blob/main/scripts/azure_ddns_updater.py&#34;&gt;https://github.com/renanfernandes/my-stuff/blob/main/scripts/azure_ddns_updater.py&lt;/a&gt;.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Take Control of DeepSeek R1: A Step-by-Step Local Setup</title>
-      <link>http://localhost:1313/posts/ollama-deepseek/</link>
+      <link>http://renanm.com/posts/ollama-deepseek/</link>
       <pubDate>Tue, 28 Jan 2025 17:36:42 -0500</pubDate>
       
-      <guid>http://localhost:1313/posts/ollama-deepseek/</guid>
+      <guid>http://renanm.com/posts/ollama-deepseek/</guid>
       
         <description>&lt;p&gt;There&amp;rsquo;s a lot of chatter about DeepSeek R1 and how it is disrupting the &lt;a href=&#34;https://www.theverge.com/ai-artificial-intelligence/598846/deepseek-big-tech-ai-industry-nvidia-impac&#34;&gt;tech markets this week&lt;/a&gt; (Jan 27, 2025), as well as concerns about how &lt;a href=&#34;https://www.wired.com/story/deepseek-ai-china-privacy-data/&#34;&gt;DeepSeek collects your data&lt;/a&gt;. After all, their privacy policy explicitly states that it stores collected information on servers located in the People’s Republic of China. This includes user inputs such as chat messages, device information, and interaction data. Critics are concerned about the potential for content censorship and the misuse of collected data by the Chinese government.&lt;/p&gt;</description>
       
@@ -33,10 +33,10 @@ After I moved my &lt;a href=&#34;http://localhost:1313/posts/azure-dns/&#34;&gt;
     
     <item>
       <title>Azure DNS</title>
-      <link>http://localhost:1313/posts/azure-dns/</link>
+      <link>http://renanm.com/posts/azure-dns/</link>
       <pubDate>Thu, 28 Mar 2024 09:08:40 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/azure-dns/</guid>
+      <guid>http://renanm.com/posts/azure-dns/</guid>
       
         <description>&lt;p&gt;I always used noip to manage my DNS Zones, but as I keep adding additional domains, it has become expensive. Azure charges only $0.50/month for the first 25 DNS zones, so thats a plus compared to $20+ I pay for NoIP. This guide shows how to create a zone and manage inside Azure.&lt;/p&gt;
 &lt;h2 id=&#34;creating-a-new-dns-zone&#34;&gt;Creating a new DNS Zone&lt;/h2&gt;
@@ -48,17 +48,17 @@ In instance details Name, type in the domain name you bought from a domain regis
     
     <item>
       <title>Azure Arc Ubuntu</title>
-      <link>http://localhost:1313/posts/azure-arc-ubuntu/</link>
+      <link>http://renanm.com/posts/azure-arc-ubuntu/</link>
       <pubDate>Fri, 08 Sep 2023 11:32:06 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/azure-arc-ubuntu/</guid>
+      <guid>http://renanm.com/posts/azure-arc-ubuntu/</guid>
       
         <description>&lt;p&gt;Following the Wireguard series, I wanted to modernize my lab. one quick way to address that is to extend my two networks via Azure Arc so I can manage my resources more adequadely&lt;/p&gt;
 &lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/azure-arc-ubuntu/#installing-azure-cli&#34;&gt;Installing Azure CLI&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/azure-arc-ubuntu/#creating-the-deployment-script-via-azure-arc-portal&#34;&gt;Creating the deployment script via Azure Arc Portal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/azure-arc-ubuntu/#running-the-onboarding-script&#34;&gt;Running the onboarding script&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://renanm.com/posts/azure-arc-ubuntu/#installing-azure-cli&#34;&gt;Installing Azure CLI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://renanm.com/posts/azure-arc-ubuntu/#creating-the-deployment-script-via-azure-arc-portal&#34;&gt;Creating the deployment script via Azure Arc Portal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://renanm.com/posts/azure-arc-ubuntu/#running-the-onboarding-script&#34;&gt;Running the onboarding script&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;installing-azure-cli&#34;&gt;Installing Azure CLI&lt;/h2&gt;
 &lt;p&gt;The steps to install Azure CLI are pretty well described &lt;img src=&#34;https://learn.microsoft.com/en-us/cli/azure/install-azure-cli&#34; alt=&#34;here&#34;&gt; so I wont take time to do this. however, make sure you have the latest Azure CLI installed.&lt;/p&gt;</description>
@@ -67,10 +67,10 @@ In instance details Name, type in the domain name you bought from a domain regis
     
     <item>
       <title>pfSense and UDM-Pro, Happy together with Wiregard</title>
-      <link>http://localhost:1313/posts/pfsense-udm-wiregard/</link>
+      <link>http://renanm.com/posts/pfsense-udm-wiregard/</link>
       <pubDate>Sun, 20 Aug 2023 16:28:38 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/pfsense-udm-wiregard/</guid>
+      <guid>http://renanm.com/posts/pfsense-udm-wiregard/</guid>
       
         <description>&lt;p&gt;Now that Wireguard is officially supported by Ubiquiti, I&amp;rsquo;ve decided its time to fix my VPN once and for all. Since I have a pfSense up and running in Brazil and a UDM Pro here in US, I always leveraged a Site-to-Site VPN with ipsec to access my devices in both ends.&lt;/p&gt;
 &lt;p&gt;While my IPsec tunnel has been working fairly well over the years, now that Ubiquiti offers Wireguard support, its time for me to modernize my setup and look into some new use cases. This post will guide you through step by step on how to make this works.&lt;/p&gt;</description>
@@ -79,10 +79,10 @@ In instance details Name, type in the domain name you bought from a domain regis
     
     <item>
       <title>Connecting your pfSense to Microsoft Sentinel</title>
-      <link>http://localhost:1313/posts/sentinel-pfsense/</link>
+      <link>http://renanm.com/posts/sentinel-pfsense/</link>
       <pubDate>Sat, 19 Aug 2023 14:55:27 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/sentinel-pfsense/</guid>
+      <guid>http://renanm.com/posts/sentinel-pfsense/</guid>
       
         <description>&lt;p&gt;Just a collection of templates, scripts, configuration files and testing observations to make my life easier. This is part of my own GitHub repository (and one of the fews I make public), so use the content and scripts here at your own risk :)&lt;/p&gt;
 &lt;h2 id=&#34;integrating-sentinel-and-home-infrastructure&#34;&gt;Integrating Sentinel and Home Infrastructure&lt;/h2&gt;
@@ -92,10 +92,10 @@ In instance details Name, type in the domain name you bought from a domain regis
     
     <item>
       <title>Hello World</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
+      <link>http://renanm.com/posts/my-first-post/</link>
       <pubDate>Tue, 15 Aug 2023 11:05:30 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <guid>http://renanm.com/posts/my-first-post/</guid>
       
         <description>&lt;h1 id=&#34;hello-world&#34;&gt;Hello World&lt;/h1&gt;
 &lt;p&gt;First post &lt;strong&gt;hello!&lt;/strong&gt;&lt;/p&gt;</description>
