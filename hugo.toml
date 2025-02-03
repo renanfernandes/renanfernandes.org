@@ -3,13 +3,14 @@ languageCode = 'en-us'
 title = 'renanfernandes / renanm'
 theme = 'anatole'
 tableOfContents = true
+disqusShortname = "renanm"
 
 [params]
 displayMode = "dark" # set the darkmode as default
 
 [services]
   [services.disqus]
-    shortname = 'renanmathiasfernandes'
+    shortname = 'renanm'
 
 [Languages]
   [Languages.en]

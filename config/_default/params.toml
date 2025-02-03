@@ -1,11 +1,12 @@
 
 title = "Hi, I'm Renan"
 author = "Renan Mathias Fernandes"
-copyright = "2023, renan, myself, eu"
+copyright = "2025, renan, myself, eu"
 description = """Cybersecurity leader, with 12+ years of industry experience and a passion to build and break things """
 profilePicture = "images/profile.jpg"
 keywords = ""
 favicon = "favicons/"
+
 # example ["css/custom.css"]
 customCss = []
 # example ["js/custom.js"]
@@ -59,6 +60,11 @@ use = "katex"  # options: "katex", "mathjax". default is "katex".
 icon = "fab fa-linkedin"
 title = "Linkedin"
 url = "https://www.linkedin.com/in/renanm/"
+
+[[socialIcons]]
+icon = "fab fa-bluesky"
+title = "bluesky"
+url = "https://bsky.app/profile/renanm.com"
 
 [[socialIcons]]
 icon = "fab fa-github"
