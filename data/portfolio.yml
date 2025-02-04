@@ -2,6 +2,20 @@ portfolioitems:
   # portfolio category
   - title: Carreer and Projects
     portfolioitem:
+      - name: Director, Security Technical Sales
+        image: '/images/portfolio/Microsoft_logo.png'
+        description: 'Direct Microsofts security strategy for the U.S. Retail and Consumer Goods sector, leading a team of Senior Technical Sales Specialists to drive secure solution adoption across 300+ enterprise accounts. Partner closely with post sales, partners, and business units to implement comprehensive Azure Security, Microsoft 365 Security, Identity & Access Management, and XDR solutions. Expertise includes secure applications, cloud networking, data security, Microsoft Defender, and IoT Security to Microsoft Retail and CPG Customers.'
+        tags:
+          - Leadership
+          - Cloud Security
+          - Azure
+          - M365 Security
+          - XDR
+          - SIEM
+          - IAM
+          - IoT
+          - AppSec
+        start: 'Since 2023'
       - name: Director, Security Cloud Solution Architecture
         image: '/images/portfolio/Microsoft_logo.png'
         description: 'At Microsoft, I lead a team of talented Security Cloud Architects for our Retail and Consumer Goods Division, helping our customers protect their environment and support the ever changing demands and needs of the most loved brands in the world. I am accountable for the adoption of Azure secure solution stack and Microsoft 365 Security, including Identity and Access Management, Secure Application, XDR, Cloud Network, Azure Data Security, Microsoft Defender and IoT Security for 300+ enterprise accounts in the US'
@@ -15,7 +29,8 @@ portfolioitems:
           - IAM
           - IoT
           - AppSec
-        start: 'Since 2021'
+        start: '2021'
+        end: '2023'
       - name: Associate Instructor
         image: '/images/portfolio/GeorgiaTech_logo.png'
         description: 'Im the Associate Instructor for Masters of Cybersecurity - Intro to Information Security Course (CS 6035). I co-created and run the Man in the Middle project, allowing students to develop deep cybersecurity and incident response skills, by leveraging forensics techniques and deep packet inspection and analysis.'
@@ -72,7 +87,6 @@ portfolioitems:
           - MSSP
           - ThreatHunting
           - ThreatMonitoring
-
       - name: Threat Analyst
         image: '/images/portfolio/IBM_Security_logo.png'
         description: 'As a Threat Analyst, I was responsible for maintaining, creating, and tuning security policies, performing signature and traffic analysis on IDS/IPS Appliances (Snort, Cisco IDS, Intrushield). I was also responsible for both threat hunting and Incident Response.'

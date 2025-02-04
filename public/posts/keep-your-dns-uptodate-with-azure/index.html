@@ -205,7 +205,7 @@ In this post, I’ll introduce a Python script that automatically updates your A
 
     ,
         "url" : "http:\/\/renanm.com\/posts\/keep-your-dns-uptodate-with-azure\/",
-        "wordCount" : "781",
+        "wordCount" : "779",
         "genre" : [ ],
         "keywords" : [ ]
     }
@@ -472,7 +472,7 @@ After I moved my <a href="http://renanm.com/posts/azure-dns/">DNS Zone from NoIP
 <p>In this post, I&rsquo;ll introduce a Python script that automatically updates your Azure DNS record with your machine’s latest public IP address. The best part? The configuration is secure—sensitive details like your Azure subscription and DNS settings are stored in environment variables. You can check out the full code on my GitHub repository: <a href="https://github.com/renanfernandes/my-stuff/blob/main/scripts/azure_ddns_updater.py">https://github.com/renanfernandes/my-stuff/blob/main/scripts/azure_ddns_updater.py</a>.</p>
 <h2 id="script-overview">Script Overview</h2>
 <p>The script leverages the <a href="https://learn.microsoft.com/azure/developer/python/">Azure SDK for Python</a> to interact with Azure DNS. It fetches your public IP using <a href="https://www.ipify.org">ipify</a> and updates the DNS record if necessary. Sensitive configuration values are read from environment variables, which adds a layer of security by keeping credentials out of the code.</p>
-<p>Below is the updated and secure version of the script:</p>
+<p>Below is the updated version of the script:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">azure_ddns_updater.py: A dynamic DNS updater for Azure DNS.

@@ -14,7 +14,7 @@ In this post, I'll introduce a Python script that automatically updates your Azu
 
 The script leverages the [Azure SDK for Python](https://learn.microsoft.com/azure/developer/python/) to interact with Azure DNS. It fetches your public IP using [ipify](https://www.ipify.org) and updates the DNS record if necessary. Sensitive configuration values are read from environment variables, which adds a layer of security by keeping credentials out of the code.
 
-Below is the updated and secure version of the script:
+Below is the updated version of the script:
 
 ```python
 #!/usr/bin/env python3

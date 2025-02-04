@@ -205,7 +205,7 @@ Após mover minha Zona DNS do NoIP para o Azure, eu precisei de uma maneira conf
 
     ,
         "url" : "http:\/\/renanm.com\/pt-br\/posts\/keep-your-dns-uptodate-with-azure\/",
-        "wordCount" : "799",
+        "wordCount" : "797",
         "genre" : [ ],
         "keywords" : [ ]
     }
@@ -472,7 +472,7 @@ Após mover minha <a href="http://renanm.com/pt-br/posts/azure-dns/">Zona DNS do
 <p>Neste post, vou apresentar um script em Python que atualiza automaticamente seu registro DNS do Azure com o último endereço IP público da sua máquina. A melhor parte? A configuração é segura—detalhes sensíveis como sua assinatura do Azure e as configurações de DNS são armazenados em variáveis de ambiente. Você pode conferir o código completo no meu repositório no GitHub: <a href="https://github.com/renanfernandes/my-stuff/blob/main/scripts/azure_ddns_updater.py">https://github.com/renanfernandes/my-stuff/blob/main/scripts/azure_ddns_updater.py</a>.</p>
 <h2 id="visão-geral-do-script">Visão Geral do Script</h2>
 <p>O script utiliza o <a href="https://learn.microsoft.com/azure/developer/python/">Azure SDK para Python</a> para interagir com o Azure DNS. Ele obtém seu IP público usando <a href="https://www.ipify.org">ipify</a> e atualiza o registro DNS se necessário. Os valores de configuração sensíveis são lidos a partir de variáveis de ambiente, o que adiciona uma camada de segurança ao manter as credenciais fora do código.</p>
-<p>Abaixo está a versão atualizada e segura do script:</p>
+<p>Abaixo está a versão atualizada do script:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">azure_ddns_updater.py: A dynamic DNS updater for Azure DNS.
