@@ -1,5 +1,5 @@
 ---
-title: "Keep Your DNS Up-to-Date with Azure: A Dynamic DNS Script for Linux"
+title: "Mantenha Seu DNS Atualizado com Azure: Um Script de DNS Dinâmico para Linux"
 date: 2025-02-03T11:36:42-05:00
 draft: false
 toc: true
