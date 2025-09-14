@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home-Assistant on renan</title>
+    <link>http://renanm.com/pt-br/tags/home-assistant/</link>
+    <description>Recent content in Home-Assistant on renan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Sun, 14 Sep 2025 16:47:29 -0400</lastBuildDate><atom:link href="http://renanm.com/pt-br/tags/home-assistant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flashing Sonoff S31 com o Flipper Zero (Sem Adaptador USB Serial!)</title>
+      <link>http://renanm.com/pt-br/posts/flashing-sonoff-s31-flipper-zero/</link>
+      <pubDate>Sun, 14 Sep 2025 16:47:29 -0400</pubDate>
+      
+      <guid>http://renanm.com/pt-br/posts/flashing-sonoff-s31-flipper-zero/</guid>
+      
+        <description>&lt;p&gt;Um guia passo a passo de como fazer &lt;strong&gt;Flashing&lt;/strong&gt; no &lt;strong&gt;Sonoff S31&lt;/strong&gt; com o firmware &lt;strong&gt;Tasmota&lt;/strong&gt;, usando apenas o &lt;strong&gt;Flipper Zero&lt;/strong&gt; (sem adaptador USB-Serial e sem necessidade de solda).&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Eu estava tendo problemas com meus antigos dispositivos &lt;strong&gt;Wemo&lt;/strong&gt;. Eles viviam caindo da rede e eu queria me livrar da dependência da nuvem. Depois de algumas pesquisas, encontrei o &lt;strong&gt;Sonoff S31&lt;/strong&gt; — uma tomada inteligente disponível em duas versões: Zigbee e Wi-Fi.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

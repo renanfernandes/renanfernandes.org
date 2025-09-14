@@ -16,7 +16,7 @@
 
   </title>
 
-  <meta name="generator" content="Hugo 0.139.5"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="generator" content="Hugo 0.150.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="author" content="Renan Mathias Fernandes" />
   <meta
     name="description"
@@ -305,8 +305,8 @@ While my IPsec tunnel has been working fairly well over the years, now that Ubiq
   
   <script
     type="text/javascript"
-    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
     crossorigin="anonymous"
   ></script></div>
 </aside>
@@ -460,8 +460,7 @@ While my IPsec tunnel has been working fairly well over the years, now that Ubiq
 <p>The UDM Pro will act as the Wireguard Server, while pfSense will be the client connecting into it.
 Setting up Wireguard on UDM Pro is as easy as it gets. Going to</p>
 <blockquote>
-<p>Settings &gt; Teleport &amp; VPN &gt; VPN Server</p>
-</blockquote>
+<p>Settings &gt; Teleport &amp; VPN &gt; VPN Server</p></blockquote>
 <p>Takes you to the new VPN Server screen. Set the name of your VPN and take notes on your public key. You&rsquo;ll need it later.
 You can configure the Gateway and Network you&rsquo;d like or leave the default settings. If you decide to modify your network settings, use the Advanced. In my case the default settings works fine. So I&rsquo;ll leave it as is</p>
 <p><img src="/images/UDM_Wireguard_Setup_1.png" alt="UDM Wireguard Setup Screen"></p>
@@ -473,14 +472,12 @@ You can configure the Gateway and Network you&rsquo;d like or leave the default 
 <h3 id="installing-wireguard-packages">Installing Wireguard Packages</h3>
 <p>Go to</p>
 <blockquote>
-<p>System&gt;Package Manager&gt;Available Packages</p>
-</blockquote>
+<p>System&gt;Package Manager&gt;Available Packages</p></blockquote>
 <p>Search for Wireguard and Install the package.</p>
 <h3 id="creating-the-tunnel">Creating the Tunnel</h3>
 <p>Once the Wireguard package is installed, you&rsquo;ll get a new Option under the VPN menu. Go to</p>
 <blockquote>
-<p>VPN&gt;Wireguard</p>
-</blockquote>
+<p>VPN&gt;Wireguard</p></blockquote>
 <p>Click on <code>Add Tunnel</code></p>
 <pre tabindex="0"><code>Enable: Checked
 Description: Whatever you want
@@ -493,8 +490,7 @@ Public Key: Public key generated when you created the Client on UDM Pro (its und
 <h3 id="establishing-the-peer-connection">Establishing the Peer Connection</h3>
 <p>With the tunnel created on pfSense, now its time to create the Peer and establish the connection with UDM Pro. Navigate to</p>
 <blockquote>
-<p>Peers&gt;Add Peer</p>
-</blockquote>
+<p>Peers&gt;Add Peer</p></blockquote>
 <p>Set your settings to:</p>
 <pre tabindex="0"><code>Enable: Checked
 Tunnel: Select the new tunnel you just created
@@ -510,8 +506,7 @@ After that, click on Save Peer</p>
 <h3 id="creating-the-interface">Creating the interface</h3>
 <p>Go to</p>
 <blockquote>
-<p>Interfaces&gt;Assignments</p>
-</blockquote>
+<p>Interfaces&gt;Assignments</p></blockquote>
 <p>Under Available Network Ports, select the tunnel you created on the step above and click on the <code>+Add</code> button.
 This will create a new <strong>OPT</strong> interface.</p>
 <p>Click on the OPT interface and set your settings to:</p>
@@ -525,14 +520,12 @@ IPv4 Upstream Gateway: Click on Add a new Gateway and on the Gateway IPv4 field,
 <h2 id="checking-the-handshake">Checking the handshake</h2>
 <p>Head to</p>
 <blockquote>
-<p>VPN&gt;WireGuard&gt;Status</p>
-</blockquote>
+<p>VPN&gt;WireGuard&gt;Status</p></blockquote>
 <p>Open the tunnel and verify if the handshake was established. You should see the handshake listed there</p>
 <p><img src="/images/pfSense_Wireguard_Handshake_1.png" alt="pfSense Wireguard Handshake"></p>
 <p>You can also confirm on the UDM Pro End, by logging on</p>
 <blockquote>
-<p>Settings&gt;Teleport &amp; VPN&gt;VPN Server</p>
-</blockquote>
+<p>Settings&gt;Teleport &amp; VPN&gt;VPN Server</p></blockquote>
 <p>And checking the # of Active Clients</p>
 <p><img src="/images/UDM_Wireguard_Handshake_1.png" alt="UDM Pro Wireguard Handshake"></p>
 </div>
@@ -560,8 +553,8 @@ IPv4 Upstream Gateway: Click on Add a new Gateway and on the Gateway IPv4 field,
   
   <script
     type="text/javascript"
-    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
-    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
     crossorigin="anonymous"
   ></script></body>
 </html>

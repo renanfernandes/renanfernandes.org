@@ -1,0 +1,596 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="pt-br"
+  data-theme="dark"
+  
+    class="html theme--dark"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        Flashing Sonoff S31 com o Flipper Zero (Sem Adaptador USB Serial!) |
+      Renan Mathias Fernandes
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.150.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Renan Mathias Fernandes" />
+  <meta
+    name="description"
+    content="Cybersecurity leader, with 12&#43; years of industry experience and a passion to build and break things "
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.8d4fad7e6916ad2e291e8d97ada157c70350d6d7150fea137e7243340967befb.css"
+      integrity="sha256-jU&#43;tfmkWrS4pHo2XraFXxwNQ1tcVD&#43;oTfnJDNAlnvvs="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="http://renanm.com/pt-br/posts/flashing-sonoff-s31-flipper-zero/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://renanm.com/images/site-feature-image.png">
+  <meta name="twitter:title" content="Flashing Sonoff S31 com o Flipper Zero (Sem Adaptador USB Serial!)">
+  <meta name="twitter:description" content="Um guia passo a passo de como fazer Flashing no Sonoff S31 com o firmware Tasmota, usando apenas o Flipper Zero (sem adaptador USB-Serial e sem necessidade de solda).
+Eu estava tendo problemas com meus antigos dispositivos Wemo. Eles viviam caindo da rede e eu queria me livrar da dependência da nuvem. Depois de algumas pesquisas, encontrei o Sonoff S31 — uma tomada inteligente disponível em duas versões: Zigbee e Wi-Fi.">
+
+
+
+  
+  <meta property="og:url" content="http://renanm.com/pt-br/posts/flashing-sonoff-s31-flipper-zero/">
+  <meta property="og:site_name" content="renan">
+  <meta property="og:title" content="Flashing Sonoff S31 com o Flipper Zero (Sem Adaptador USB Serial!)">
+  <meta property="og:description" content="Um guia passo a passo de como fazer Flashing no Sonoff S31 com o firmware Tasmota, usando apenas o Flipper Zero (sem adaptador USB-Serial e sem necessidade de solda).
+Eu estava tendo problemas com meus antigos dispositivos Wemo. Eles viviam caindo da rede e eu queria me livrar da dependência da nuvem. Depois de algumas pesquisas, encontrei o Sonoff S31 — uma tomada inteligente disponível em duas versões: Zigbee e Wi-Fi.">
+  <meta property="og:locale" content="pt_br">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-09-14T16:47:29-04:00">
+    <meta property="article:modified_time" content="2025-09-14T16:47:29-04:00">
+    <meta property="article:tag" content="Home-Assistant">
+    <meta property="article:tag" content="Tasmota">
+    <meta property="article:tag" content="Flipper-Zero">
+    <meta property="article:tag" content="Iot">
+    <meta property="article:tag" content="Diy">
+    <meta property="og:image" content="http://renanm.com/images/site-feature-image.png">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "Flashing Sonoff S31 com o Flipper Zero (Sem Adaptador USB Serial!)",
+        "headline": "Flashing Sonoff S31 com o Flipper Zero (Sem Adaptador USB Serial!)",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eUm guia passo a passo de como fazer \u003cstrong\u003eFlashing\u003c\/strong\u003e no \u003cstrong\u003eSonoff S31\u003c\/strong\u003e com o firmware \u003cstrong\u003eTasmota\u003c\/strong\u003e, usando apenas o \u003cstrong\u003eFlipper Zero\u003c\/strong\u003e (sem adaptador USB-Serial e sem necessidade de solda).\u003c\/p\u003e\n\u003chr\u003e\n\u003cp\u003eEu estava tendo problemas com meus antigos dispositivos \u003cstrong\u003eWemo\u003c\/strong\u003e. Eles viviam caindo da rede e eu queria me livrar da dependência da nuvem. Depois de algumas pesquisas, encontrei o \u003cstrong\u003eSonoff S31\u003c\/strong\u003e — uma tomada inteligente disponível em duas versões: Zigbee e Wi-Fi.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "pt-br",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/renanm.com\/pt-br\/posts\/flashing-sonoff-s31-flipper-zero\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "copyrightYear" : "2025",
+        "dateCreated": "2025-09-14T16:47:29.00Z",
+        "datePublished": "2025-09-14T16:47:29.00Z",
+        "dateModified": "2025-09-14T16:47:29.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Renan Mathias Fernandes",
+            "url": "http://renanm.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/renanm.com\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "http://renanm.com/images/site-feature-image.png"
+
+
+      
+      ]
+
+    ,
+        "url" : "http:\/\/renanm.com\/pt-br\/posts\/flashing-sonoff-s31-flipper-zero\/",
+        "wordCount" : "457",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "home-assistant"
+
+    
+      
+        ,
+
+      
+      "tasmota"
+
+    
+      
+        ,
+
+      
+      "flipper-zero"
+
+    
+      
+        ,
+
+      
+      "iot"
+
+    
+      
+        ,
+
+      
+      "diy"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profile.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/pt-br">Hi, I&#39;m Renan</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Cybersecurity leader, with 12+ years of industry experience and a passion to build and break things </p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://www.linkedin.com/in/renanm/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Linkedin"
+            title="Linkedin"
+          >
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://bsky.app/profile/renanm.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="bluesky"
+            title="bluesky"
+          >
+            <i class="fab fa-bluesky fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="http://github.com/renanfernandes"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:listas@renanfernandes.org"
+            target="_blank"
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2025, renan, myself, eu
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/posts/"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+
+          <li class="nav__list-item">
+            <div class="optionswitch">
+              <input class="optionswitch__picker" type="checkbox" id="2" hidden />
+
+              
+              
+                
+
+              
+                
+
+              
+
+
+              <label class="optionswitch__label" for="2"
+                >whoami <i class="fa fa-angle-down" aria-hidden="true"></i
+              ></label>
+
+              <div class="optionswitch__triangle"></div>
+              <ul class="optionswitch__list">
+                
+                  <li class="optionswitch__list-item">
+                    
+                    <a
+                      href="/whoami/"
+                      
+                      title=""
+                      >$ whoami</a
+                    >
+                  </li>
+                
+                  <li class="optionswitch__list-item">
+                    
+                    <a
+                      href="/portfolio/"
+                      
+                      title=""
+                      >Career and Projects</a
+                    >
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+        <li class="nav__list-item">
+          <div class="optionswitch">
+            <input class="optionswitch__picker" type="checkbox" id="languagepicker" hidden />
+            <label class="optionswitch__label" for="languagepicker"
+              >pt-br <i class="fa fa-angle-down" aria-hidden="true"></i
+            ></label>
+            <div class="optionswitch__triangle"></div>
+            <ul class="optionswitch__list">
+              
+                <li class="optionswitch__list-item">
+                  <a href="/posts/flashing-sonoff-s31-flipper-zero/" title="EN"
+                    ><span
+                      
+                      aria-label="EN"
+                      >EN</span
+                    >
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </li>
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Flashing Sonoff S31 Com O Flipper Zero (Sem Adaptador USB Serial!)</h1>
+      
+      <h3>Table of Contents</h3>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#abrindo-o-sonoff-s31">Abrindo o Sonoff S31</a></li>
+    <li><a href="#conectando-o-flipper-zero">Conectando o Flipper Zero</a></li>
+    <li><a href="#configurando-o-flipper-zero-como-usb-uart-bridge">Configurando o Flipper Zero como USB-UART Bridge</a></li>
+    <li><a href="#fazendo-flash-do-tasmota">Fazendo Flash do Tasmota</a></li>
+    <li><a href="#conclusão">Conclusão</a></li>
+  </ul>
+</nav>
+<p>Um guia passo a passo de como fazer <strong>Flashing</strong> no <strong>Sonoff S31</strong> com o firmware <strong>Tasmota</strong>, usando apenas o <strong>Flipper Zero</strong> (sem adaptador USB-Serial e sem necessidade de solda).</p>
+<hr>
+<p>Eu estava tendo problemas com meus antigos dispositivos <strong>Wemo</strong>. Eles viviam caindo da rede e eu queria me livrar da dependência da nuvem. Depois de algumas pesquisas, encontrei o <strong>Sonoff S31</strong> — uma tomada inteligente disponível em duas versões: Zigbee e Wi-Fi.</p>
+<p>O que realmente me chamou a atenção foi a versão Wi-Fi: ela pode receber firmwares customizados como <strong>Tasmota</strong> ou <strong>ESPHome</strong>, tornando-se totalmente local e perfeita para minha integração com o <strong>Home Assistant</strong>. Vendido! 🚀</p>
+<p>Mas ainda restava uma grande questão:<br>
+<em>Como fazer o Flash desse dispositivo sem um adaptador USB-Serial?</em></p>
+<p>Olhando para a mesa, vi meu <strong>Flipper Zero</strong>. Será que eu poderia usar os pinos GPIO dele para fazer o Flash do Sonoff? Desafio aceito.</p>
+<hr>
+<h2 id="abrindo-o-sonoff-s31">Abrindo o Sonoff S31</h2>
+<p>Abrir o dispositivo é bem simples. Use uma faca ou chave de fenda para remover a tampa cinza e depois retire três parafusos. Isso vai revelar a placa interna:</p>
+<p><img src="/images/sonoff_1.png" alt="Sonoff aberto"></p>
+<p>Na placa, você verá os pinos usados para o Flash. Para o nosso caso, só precisamos de <strong>VCC, RX, TX e GND</strong>:</p>
+<p><img src="/images/sonoff_2.png" alt="Pinos Sonoff"></p>
+<hr>
+<h2 id="conectando-o-flipper-zero">Conectando o Flipper Zero</h2>
+<p>O Flipper Zero oferece tanto saída de <strong>5V</strong> quanto de <strong>3,3V</strong>.<br>
+⚠️ <strong>Atenção:</strong> o Sonoff S31 trabalha com <strong>3,3V</strong>, então use o pino correto.</p>
+<p>No Flipper Zero, conecte:</p>
+<ul>
+<li><strong>3V3 → VCC</strong></li>
+<li><strong>TX → RX</strong></li>
+<li><strong>RX → TX</strong></li>
+<li><strong>GND → GND</strong></li>
+</ul>
+<p>Repare na inversão de TX/RX: o TX do Flipper deve ir no RX do Sonoff e vice-versa.</p>
+<p>Aqui está como ficou minha montagem:</p>
+<p><img src="/images/flipper_1.png" alt="Fiação Flipper"></p>
+<p>Para evitar solda, usei <strong>garras de teste (test hook clips)</strong> (<a href="https://www.amazon.com/dp/B08M5GNY47">link Amazon</a>) em vez de pinos fixos. Assim, não precisei modificar permanentemente a placa.</p>
+<hr>
+<h2 id="configurando-o-flipper-zero-como-usb-uart-bridge">Configurando o Flipper Zero como USB-UART Bridge</h2>
+<p>O próximo passo é expor o Flipper como adaptador USB-Serial:</p>
+<ol>
+<li>No Flipper, vá em <strong>GPIO → USB-UART Bridge</strong></li>
+<li>Isso cria uma porta COM no seu computador que será usada para fazer o Flash do firmware.</li>
+</ol>
+<p><img src="/images/flipper_2.png" alt="USB UART"></p>
+<p>Com tudo conectado, segure o <strong>botão de energia</strong> do Sonoff enquanto liga o dispositivo — isso ativa o <strong>modo de boot</strong>.</p>
+<p><img src="/images/flipper_3.png" alt="Boot Mode"></p>
+<hr>
+<h2 id="fazendo-flash-do-tasmota">Fazendo Flash do Tasmota</h2>
+<p>Agora vem a parte divertida: fazer o Flash. Acesse o <a href="https://tasmota.github.io/install">instalador web do Tasmota</a>.</p>
+<ol>
+<li>Clique em <strong>Connect</strong></li>
+<li>Selecione o dispositivo USB do Flipper</li>
+<li>Escolha a versão <strong>Tasmota (English)</strong></li>
+<li>Aguarde enquanto o dispositivo finaliza de escrever o novo Firmware</li>
+</ol>
+<p><img src="/images/tasmota_1.png" alt="Selecionar Tasmota"><br>
+<img src="/images/tasmota_2.png" alt="Escolher Dispositivo"><br>
+<img src="/images/tasmota_3.png" alt="Instalando"></p>
+<hr>
+<h2 id="conclusão">Conclusão</h2>
+<p>E pronto! O Sonoff S31 agora está rodando Tasmota. Você pode se conectar ao Wi-Fi criado por ele, configurar o dispositivo e integrá-lo diretamente ao <strong>Home Assistant</strong> — sem depender de serviços de nuvem.</p>
+<p>Sem dongle USB, sem solda, sem complicação. Apenas <strong>Flipper Zero + Sonoff S31 + Tasmota = Tomada inteligente totalmente local</strong>.</p>
+<p>Aproveite suas novas tomadas offline!</p>
+</div>
+    <div class="post__footer">
+      
+
+      
+        <span><a class="tag" href="/pt-br/tags/home-assistant/">home-assistant</a><a class="tag" href="/pt-br/tags/tasmota/">tasmota</a><a class="tag" href="/pt-br/tags/flipper-zero/">flipper-zero</a><a class="tag" href="/pt-br/tags/iot/">iot</a><a class="tag" href="/pt-br/tags/diy/">diy</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2025, renan, myself, eu
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>
