@@ -1,10 +1,11 @@
 ---
 title: "Protecting Home Assistant with Caddy and Microsoft Entra ID"
-date: 2025-09-29T21:45:00-04:00
+date: 2025-09-29T20:45:00-04:00
 draft: false
 toc: true
-tags: ["home-assistant", "caddy", "entra-id", "reverse-proxy", "oauth2-proxy", "diy"]
+tags: ["home-assistant", "caddy", "entra-id", "reverse-proxy", "diy"]
 ---
+
 
 In my never-ending quest to clean up my home lab, I finally tackled something that had been bugging me for a while: **how to safely expose Home Assistant to the outside world without sketchy logins or self-signed cert warnings.**  
 
@@ -36,6 +37,27 @@ Browser → Caddy (TLS) → oauth2-proxy (OIDC auth) → Home Assistant
                           ↑
                      Entra ID login
 ```
+
+## What is a Reverse Proxy?
+
+A **reverse proxy** is a server that sits between the user and your internal services.  
+Instead of the user connecting directly to **Home Assistant** (or another app) on an IP/port, they connect to the reverse proxy (Caddy, in my case).  
+
+The reverse proxy:
+- Receives the user’s connection (usually HTTPS on port 443).
+- Handles authentication, TLS certificates, and access rules.
+- Forwards the request to the correct internal service.
+- Sends the response back to the user as if it came directly from the domain.
+
+This greatly simplifies access (one single entry point) and improves security, since you can enforce strong authentication and centralize TLS.
+
+### Diagram
+
+![Reverse Proxy Diagram](/images/reverse-proxy-diagram.png)
+
+
+In my setup, the reverse proxy also integrates with **Microsoft Entra ID** (Microsoft login + MFA) and enforces segmentation between my main LAN and the IoT VLAN.
+
 
 ---
 
@@ -121,7 +143,7 @@ OAUTH2_PROXY_SCOPE=openid profile email
 OAUTH2_PROXY_SKIP_PROVIDER_BUTTON=true
 ```
 
-⚠️ **Gotcha**: The cookie secret must be exactly 16, 24, or 32 bytes. Don’t add quotes or inline comments in the env file. A wrong line here caused me to spend an hour debugging errors...
+⚠️ **Gotcha**: The cookie secret must be exactly 16, 24, or 32 bytes. Don’t add quotes or inline comments in the env file. A wrong line here caused me to spend an hour debugging errors 🥺
 
 ---
 

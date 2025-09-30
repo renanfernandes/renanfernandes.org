@@ -1,0 +1,698 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="pt-br"
+  data-theme="dark"
+  
+    class="html theme--dark"
+  
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        Protegendo o Home Assistant com Caddy e Microsoft Entra ID |
+      Renan Mathias Fernandes
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.150.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Renan Mathias Fernandes" />
+  <meta
+    name="description"
+    content="Cybersecurity leader, with 12&#43; years of industry experience and a passion to build and break things "
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.8d4fad7e6916ad2e291e8d97ada157c70350d6d7150fea137e7243340967befb.css"
+      integrity="sha256-jU&#43;tfmkWrS4pHo2XraFXxwNQ1tcVD&#43;oTfnJDNAlnvvs="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="http://localhost:1313/pt-br/posts/protecting-ha-caddy-entra-updated/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/site-feature-image.png">
+  <meta name="twitter:title" content="Protegendo o Home Assistant com Caddy e Microsoft Entra ID">
+  <meta name="twitter:description" content="Na minha eterna missão de organizar o meu home lab, finalmente resolvi algo que me incomodava há um tempo: como expor o Home Assistant para fora da minha rede de forma segura, sem logins duvidosos ou avisos de certificados autoassinados.
+Primeiro de tudo: eu tinha algumas opções para o proxy reverso — os suspeitos de sempre como nginx ou Traefik — mas escolhi o Caddy. Por quê? Sinceramente, porque é muito mais fácil. A sintaxe de configuração é limpa, ele faz a coisa certa na maior parte do tempo sem precisar brigar, e a comunidade/documentação são excelentes. Com nginx eu sempre sinto que estou caçando mais uma linha de proxy_set_header. Com o Caddy, simplesmente… funciona.">
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/pt-br/posts/protecting-ha-caddy-entra-updated/">
+  <meta property="og:site_name" content="renan">
+  <meta property="og:title" content="Protegendo o Home Assistant com Caddy e Microsoft Entra ID">
+  <meta property="og:description" content="Na minha eterna missão de organizar o meu home lab, finalmente resolvi algo que me incomodava há um tempo: como expor o Home Assistant para fora da minha rede de forma segura, sem logins duvidosos ou avisos de certificados autoassinados.
+Primeiro de tudo: eu tinha algumas opções para o proxy reverso — os suspeitos de sempre como nginx ou Traefik — mas escolhi o Caddy. Por quê? Sinceramente, porque é muito mais fácil. A sintaxe de configuração é limpa, ele faz a coisa certa na maior parte do tempo sem precisar brigar, e a comunidade/documentação são excelentes. Com nginx eu sempre sinto que estou caçando mais uma linha de proxy_set_header. Com o Caddy, simplesmente… funciona.">
+  <meta property="og:locale" content="pt_br">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-09-29T20:45:00-04:00">
+    <meta property="article:modified_time" content="2025-09-29T20:45:00-04:00">
+    <meta property="article:tag" content="Home-Assistant">
+    <meta property="article:tag" content="Caddy">
+    <meta property="article:tag" content="Entra-Id">
+    <meta property="article:tag" content="Reverse-Proxy">
+    <meta property="article:tag" content="Diy">
+    <meta property="og:image" content="http://localhost:1313/images/site-feature-image.png">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "Protegendo o Home Assistant com Caddy e Microsoft Entra ID",
+        "headline": "Protegendo o Home Assistant com Caddy e Microsoft Entra ID",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eNa minha eterna missão de organizar o meu home lab, finalmente resolvi algo que me incomodava há um tempo: \u003cstrong\u003ecomo expor o Home Assistant para fora da minha rede de forma segura, sem logins duvidosos ou avisos de certificados autoassinados.\u003c\/strong\u003e\u003c\/p\u003e\n\u003cp\u003ePrimeiro de tudo: eu tinha algumas opções para o proxy reverso — os suspeitos de sempre como nginx ou Traefik — mas escolhi o \u003cstrong\u003eCaddy\u003c\/strong\u003e. Por quê? Sinceramente, porque é muito mais fácil. A sintaxe de configuração é limpa, ele faz a coisa certa na maior parte do tempo sem precisar brigar, e a comunidade\/documentação são excelentes. Com nginx eu sempre sinto que estou caçando mais uma linha de \u003ccode\u003eproxy_set_header\u003c\/code\u003e. Com o Caddy, simplesmente\u0026hellip; funciona.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "pt-br",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/pt-br\/posts\/protecting-ha-caddy-entra-updated\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Renan Mathias Fernandes"
+        },
+        "copyrightYear" : "2025",
+        "dateCreated": "2025-09-29T20:45:00.00Z",
+        "datePublished": "2025-09-29T20:45:00.00Z",
+        "dateModified": "2025-09-29T20:45:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Renan Mathias Fernandes",
+            "url": "http://localhost:1313/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/localhost:1313\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "http://localhost:1313/images/site-feature-image.png"
+
+
+      
+      ]
+
+    ,
+        "url" : "http:\/\/localhost:1313\/pt-br\/posts\/protecting-ha-caddy-entra-updated\/",
+        "wordCount" : "951",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "home-assistant"
+
+    
+      
+        ,
+
+      
+      "caddy"
+
+    
+      
+        ,
+
+      
+      "entra-id"
+
+    
+      
+        ,
+
+      
+      "reverse-proxy"
+
+    
+      
+        ,
+
+      
+      "diy"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profile.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/pt-br">Hi, I&#39;m Renan</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Cybersecurity leader, with 12+ years of industry experience and a passion to build and break things </p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://www.linkedin.com/in/renanm/"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Linkedin"
+            title="Linkedin"
+          >
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://bsky.app/profile/renanm.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="bluesky"
+            title="bluesky"
+          >
+            <i class="fab fa-bluesky fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="http://github.com/renanfernandes"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:listas@renanfernandes.org"
+            target="_blank"
+            rel="noopener me"
+            aria-label="e-mail"
+            title="e-mail"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2025, renan, myself, eu
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/posts/"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+
+          <li class="nav__list-item">
+            <div class="optionswitch">
+              <input class="optionswitch__picker" type="checkbox" id="2" hidden />
+
+              
+              
+                
+
+              
+                
+
+              
+
+
+              <label class="optionswitch__label" for="2"
+                >whoami <i class="fa fa-angle-down" aria-hidden="true"></i
+              ></label>
+
+              <div class="optionswitch__triangle"></div>
+              <ul class="optionswitch__list">
+                
+                  <li class="optionswitch__list-item">
+                    
+                    <a
+                      href="/whoami/"
+                      
+                      title=""
+                      >$ whoami</a
+                    >
+                  </li>
+                
+                  <li class="optionswitch__list-item">
+                    
+                    <a
+                      href="/portfolio/"
+                      
+                      title=""
+                      >Career and Projects</a
+                    >
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+        <li class="nav__list-item">
+          <div class="optionswitch">
+            <input class="optionswitch__picker" type="checkbox" id="languagepicker" hidden />
+            <label class="optionswitch__label" for="languagepicker"
+              >pt-br <i class="fa fa-angle-down" aria-hidden="true"></i
+            ></label>
+            <div class="optionswitch__triangle"></div>
+            <ul class="optionswitch__list">
+              
+                <li class="optionswitch__list-item">
+                  <a href="/posts/protecting-ha-caddy-entra-updated/" title="EN"
+                    ><span
+                      
+                      aria-label="EN"
+                      >EN</span
+                    >
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </li>
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Protegendo O Home Assistant Com Caddy E Microsoft Entra ID</h1>
+      
+      <h3>Table of Contents</h3>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tá-mas-por-que-fazer-isso">Tá, mas por que fazer isso?</a></li>
+    <li><a href="#arquitetura">Arquitetura</a></li>
+    <li><a href="#o-que-é-um-reverse-proxy">O que é um Reverse Proxy?</a>
+      <ul>
+        <li><a href="#diagrama">Diagrama</a></li>
+      </ul>
+    </li>
+    <li><a href="#pré-requisitos">Pré-requisitos</a></li>
+    <li><a href="#passo-1--registro-de-app-no-entra-id">Passo 1 — Registro de App no Entra ID</a></li>
+    <li><a href="#passo-2--docker-compose">Passo 2 — Docker Compose</a></li>
+    <li><a href="#passo-3--configuração-do-oauth2-proxy">Passo 3 — Configuração do oauth2-proxy</a></li>
+    <li><a href="#passo-4--configuração-do-caddy">Passo 4 — Configuração do Caddy</a></li>
+    <li><a href="#passo-5--configuração-no-home-assistant">Passo 5 — Configuração no Home Assistant</a></li>
+    <li><a href="#passo-6--acesso-externo">Passo 6 — Acesso externo</a></li>
+    <li><a href="#problemas-comuns-e-soluções">Problemas comuns e soluções</a></li>
+    <li><a href="#conclusão">Conclusão</a></li>
+  </ul>
+</nav>
+<p>Na minha eterna missão de organizar o meu home lab, finalmente resolvi algo que me incomodava há um tempo: <strong>como expor o Home Assistant para fora da minha rede de forma segura, sem logins duvidosos ou avisos de certificados autoassinados.</strong></p>
+<p>Primeiro de tudo: eu tinha algumas opções para o proxy reverso — os suspeitos de sempre como nginx ou Traefik — mas escolhi o <strong>Caddy</strong>. Por quê? Sinceramente, porque é muito mais fácil. A sintaxe de configuração é limpa, ele faz a coisa certa na maior parte do tempo sem precisar brigar, e a comunidade/documentação são excelentes. Com nginx eu sempre sinto que estou caçando mais uma linha de <code>proxy_set_header</code>. Com o Caddy, simplesmente&hellip; funciona.</p>
+<p>E o proxy reverso em si? Não é só para ter URLs bonitinhas. Ele me dá uma barreira de segurança dura. Posso forçar <strong>login da Microsoft + MFA</strong> antes de qualquer um acessar meus dashboards, e ainda manter uma segmentação forte entre a <strong>VLAN principal</strong> e a <strong>VLAN de IoT</strong>, que é muito mais vulnerável. Mesmo que algum dispositivo do lado IoT fosse comprometido, o proxy reverso garante que o acesso aos serviços críticos continue protegido e registrado.</p>
+<p>O projeto do fim de semana, então, foi colocar o Caddy na frente do Home Assistant e integrá-lo ao <strong>Microsoft Entra ID</strong> para autenticação. Agora, antes mesmo de ver o meu dashboard, eu passo pelo login da Microsoft.</p>
+<p>A melhor parte? Tudo rodando no meu servidorzinho Docker, usando a versão gratuita do Entra e os certificados da DigiCert que eu já tinha. Sem assinaturas extras, sem depender de nuvem — só um proxy reverso sólido com SSO que parece coisa de ambiente corporativo.</p>
+<p>Próximo passo na lista? Enviar todos esses logs para o <strong>Microsoft Sentinel</strong> para começar a criar detecções e alertas. Mas isso fica para outro fim de semana. 😉</p>
+<hr>
+<h2 id="tá-mas-por-que-fazer-isso">Tá, mas por que fazer isso?</h2>
+<ul>
+<li><strong>Proxy reverso centralizado</strong>: URLs amigáveis como <code>https://ha.domain.com</code>.</li>
+<li><strong>TLS com DigiCert</strong> (nada de avisos chatos do navegador!).</li>
+<li><strong>Autenticação com Entra</strong>: login Microsoft + MFA antes de qualquer acesso.</li>
+<li>Funciona tanto <strong>dentro quanto fora da rede</strong> (com port-forwarding no UDM Pro ou via VPN).</li>
+</ul>
+<hr>
+<h2 id="arquitetura">Arquitetura</h2>
+<pre tabindex="0"><code>Navegador → Caddy (TLS) → oauth2-proxy (OIDC auth) → Home Assistant
+                               ↑
+                         Login no Entra ID
+</code></pre><h2 id="o-que-é-um-reverse-proxy">O que é um Reverse Proxy?</h2>
+<p>Um <strong>reverse proxy</strong> é um servidor que fica entre o usuário e os serviços internos.<br>
+Em vez de o usuário acessar diretamente o <strong>Home Assistant</strong> (ou outro app) no IP e porta, ele fala com o reverse proxy (Caddy, no meu caso).</p>
+<p>O reverse proxy:</p>
+<ul>
+<li>Recebe a conexão do usuário (normalmente HTTPS na porta 443).</li>
+<li>Verifica autenticação, certificados, regras de segurança, etc.</li>
+<li>Encaminha a requisição para o serviço interno correto.</li>
+<li>Retorna a resposta para o usuário como se viesse do próprio domínio.</li>
+</ul>
+<p>Isso simplifica muito (um único ponto de entrada) e aumenta a segurança, porque você pode colocar autenticação forte e TLS centralizados.</p>
+<h3 id="diagrama">Diagrama</h3>
+<p><img src="/images/reverse-proxy-diagram.png" alt="Diagrama do Reverse Proxy"></p>
+<p>No meu caso, o reverse proxy também faz <strong>integração com Entra ID</strong> (login Microsoft + MFA) e garante segmentação entre a rede principal e a IoT VLAN.</p>
+<hr>
+<h2 id="pré-requisitos">Pré-requisitos</h2>
+<ul>
+<li>Uma máquina Linux rodando Docker (a minha é o <code>Srv-Core-Dockerland</code> em <code>10.0.0.5</code>).</li>
+<li>Home Assistant acessível em <code>10.0.1.2:8123</code>.</li>
+<li>Certificados DigiCert para <code>ha.domain.com</code> (wildcard também funciona).</li>
+<li>Um domínio (ex: <code>domain.com</code>) com DNS interno (Pi-hole/Unbound) e DNS externo apontando para o seu UDM Pro.</li>
+</ul>
+<hr>
+<h2 id="passo-1--registro-de-app-no-entra-id">Passo 1 — Registro de App no Entra ID</h2>
+<ol>
+<li>Vá até o <a href="https://portal.azure.com">Azure Portal</a> → <strong>Entra ID</strong> → <em>App registrations</em> → <em>New registration</em>.</li>
+<li>Nome: <code>HomeLab Reverse Proxy</code>.</li>
+<li>Contas: <em>apenas este diretório organizacional</em>.</li>
+<li>Redirect URI:
+<pre tabindex="0"><code>https://ha.domain.com/oauth2/callback
+</code></pre></li>
+<li>Salve → copie o <strong>Application (client) ID</strong> e o <strong>Directory (tenant) ID</strong>.</li>
+<li>Em <em>Certificates &amp; secrets</em> → crie um <strong>client secret</strong> (guarde o valor).</li>
+<li>Em <em>Authentication</em> → habilite <strong>ID tokens</strong> + <strong>Access tokens</strong>.</li>
+</ol>
+<hr>
+<h2 id="passo-2--docker-compose">Passo 2 — Docker Compose</h2>
+<p><code>/srv/docker/docker-compose.yml</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3.8&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">caddy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">caddy:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">caddy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;80:80&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;443:443&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./caddy/Caddyfile:/etc/caddy/Caddyfile:ro</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./caddy/data:/data</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./caddy/config:/config</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./certs:/certs:ro</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>: [<span style="color:#ae81ff">rpnet]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">oauth2-proxy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">quay.io/oauth2-proxy/oauth2-proxy:v7.6.0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">oauth2-proxy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">unless-stopped</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">env_file</span>: <span style="color:#ae81ff">./oauth2-proxy/env</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>: [<span style="color:#ae81ff">rpnet]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">rpnet</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">bridge</span>
+</span></span></code></pre></div><hr>
+<h2 id="passo-3--configuração-do-oauth2-proxy">Passo 3 — Configuração do oauth2-proxy</h2>
+<p><code>/srv/docker/oauth2-proxy/env</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-env" data-lang="env"><span style="display:flex;"><span>OAUTH2_PROXY_PROVIDER<span style="color:#f92672">=</span>oidc
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_OIDC_ISSUER_URL<span style="color:#f92672">=</span>https://login.microsoftonline.com/&lt;TENANT_ID&gt;/v2.0
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_CLIENT_ID<span style="color:#f92672">=</span>&lt;APP_CLIENT_ID&gt;
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_CLIENT_SECRET<span style="color:#f92672">=</span>&lt;APP_CLIENT_SECRET&gt;
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_COOKIE_SECRET<span style="color:#f92672">=</span>&lt;BASE64_32&gt;   <span style="color:#75715e"># openssl rand -base64 32</span>
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_REDIRECT_URL<span style="color:#f92672">=</span>https://ha.domain.com/oauth2/callback
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_UPSTREAMS<span style="color:#f92672">=</span>http://10.0.1.2:8123
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_COOKIE_SECURE<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_COOKIE_SAMESITE<span style="color:#f92672">=</span>lax
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_COOKIE_DOMAIN<span style="color:#f92672">=</span>ha.domain.com
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_WHITELIST_DOMAINS<span style="color:#f92672">=</span>.domain.com
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_SET_XAUTHREQUEST<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_PASS_ACCESS_TOKEN<span style="color:#f92672">=</span>true
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_SCOPE<span style="color:#f92672">=</span>openid profile email
+</span></span><span style="display:flex;"><span>OAUTH2_PROXY_SKIP_PROVIDER_BUTTON<span style="color:#f92672">=</span>true
+</span></span></code></pre></div><p>⚠️ <strong>Pegadinha</strong>: o cookie secret precisa ter exatamente 16, 24 ou 32 bytes. Não coloque aspas ou comentários na mesma linha do arquivo <code>.env</code>. Fiz isso e perdi uma hora caçando erro 🥺</p>
+<hr>
+<h2 id="passo-4--configuração-do-caddy">Passo 4 — Configuração do Caddy</h2>
+<p><code>/srv/docker/caddy/Caddyfile</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-caddyfile" data-lang="caddyfile"><span style="display:flex;"><span>ha.domain.com {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">tls</span> <span style="color:#e6db74">/certs/ha.crt</span> <span style="color:#e6db74">/certs/ha.key</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">reverse_proxy</span> oauth2-proxy:<span style="color:#ae81ff">4180</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">header_up</span> <span style="color:#e6db74">Host</span> <span style="color:#ae81ff">{host}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">header_up</span> <span style="color:#e6db74">X-Real-IP</span> <span style="color:#ae81ff">{remote_host}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">header_up</span> <span style="color:#e6db74">X-Forwarded-For</span> <span style="color:#ae81ff">{remote_host}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">header_up</span> <span style="color:#e6db74">X-Forwarded-Proto</span> <span style="color:#ae81ff">{scheme}</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="passo-5--configuração-no-home-assistant">Passo 5 — Configuração no Home Assistant</h2>
+<p>Agora você precisa dizer ao HA para confiar no proxy. Edite o <code>configuration.yaml</code> e adicione:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">http</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">use_x_forwarded_for</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trusted_proxies</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">10.0.0.5</span>          <span style="color:#75715e"># Srv-Core-Dockerland</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">172.16.0.0</span><span style="color:#ae81ff">/12    </span> <span style="color:#75715e"># rede bridge do Docker</span>
+</span></span></code></pre></div><hr>
+<h2 id="passo-6--acesso-externo">Passo 6 — Acesso externo</h2>
+<ul>
+<li>No UDM Pro: faça o forward da porta <strong>TCP/443</strong> → <code>10.0.0.5</code>.</li>
+<li>Configure seu provedor de DNS externo: crie um A record (<code>ha.domain.com</code>) → IP público (WAN).</li>
+<li>Configure seu DNS interno (ex: Pi-hole): (<code>ha.domain.com</code>) → <code>10.0.0.5</code>.</li>
+</ul>
+<hr>
+<h2 id="problemas-comuns-e-soluções">Problemas comuns e soluções</h2>
+<ul>
+<li><strong>CSRF token mismatch</strong><br>
+Certifique-se que o Caddy encaminha os headers <code>Host</code> e <code>X-Forwarded-Proto</code>, e defina <code>OAUTH2_PROXY_COOKIE_DOMAIN</code> para o seu hostname.</li>
+<li><strong>Unauthorized em vez de redirecionar</strong><br>
+Isso acontece com <code>forward_auth</code>. Use o padrão mais simples <em>auth-proxy</em> mostrado aqui.</li>
+<li><strong>403 após login</strong><br>
+Verifique se o Redirect URI no Entra bate exatamente com o valor em <code>OAUTH2_PROXY_REDIRECT_URL</code>.</li>
+</ul>
+<hr>
+<h2 id="conclusão">Conclusão</h2>
+<p>Com essa configuração eu consigo acessar o <strong>Home Assistant</strong> de qualquer lugar com segurança, usando <strong>login Microsoft + MFA</strong>. Nada de portas expostas direto, nada de telas de login frágeis, e TLS da DigiCert ponta a ponta.</p>
+<p>Esse padrão também funciona para outros serviços (HomeBridge, media servers, etc.) — basta adicionar novos subdomínios, certificados e blocos no Caddy. Simples e seguro!</p>
+<hr>
+</div>
+    <div class="post__footer">
+      
+
+      
+        <span><a class="tag" href="/pt-br/tags/home-assistant/">home-assistant</a><a class="tag" href="/pt-br/tags/caddy/">caddy</a><a class="tag" href="/pt-br/tags/entra-id/">entra-id</a><a class="tag" href="/pt-br/tags/reverse-proxy/">reverse-proxy</a><a class="tag" href="/pt-br/tags/diy/">diy</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        2025, renan, myself, eu
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

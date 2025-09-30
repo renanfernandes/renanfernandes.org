@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on renan</title>
-    <link>http://renanm.com/pt-br/tags/</link>
+    <link>http://localhost:1313/pt-br/tags/</link>
     <description>Recent content in Tags on renan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sun, 14 Sep 2025 16:47:29 -0400</lastBuildDate><atom:link href="http://renanm.com/pt-br/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Sep 2025 16:47:29 -0400</lastBuildDate><atom:link href="http://localhost:1313/pt-br/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Diy</title>
-      <link>http://renanm.com/pt-br/tags/diy/</link>
+      <link>http://localhost:1313/pt-br/tags/diy/</link>
       <pubDate>Sun, 14 Sep 2025 16:47:29 -0400</pubDate>
       
-      <guid>http://renanm.com/pt-br/tags/diy/</guid>
+      <guid>http://localhost:1313/pt-br/tags/diy/</guid>
       
         <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Flipper-Zero</title>
-      <link>http://renanm.com/pt-br/tags/flipper-zero/</link>
+      <link>http://localhost:1313/pt-br/tags/flipper-zero/</link>
       <pubDate>Sun, 14 Sep 2025 16:47:29 -0400</pubDate>
       
-      <guid>http://renanm.com/pt-br/tags/flipper-zero/</guid>
+      <guid>http://localhost:1313/pt-br/tags/flipper-zero/</guid>
       
         <description></description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>Home-Assistant</title>
-      <link>http://renanm.com/pt-br/tags/home-assistant/</link>
+      <link>http://localhost:1313/pt-br/tags/home-assistant/</link>
       <pubDate>Sun, 14 Sep 2025 16:47:29 -0400</pubDate>
       
-      <guid>http://renanm.com/pt-br/tags/home-assistant/</guid>
+      <guid>http://localhost:1313/pt-br/tags/home-assistant/</guid>
       
         <description></description>
       
@@ -42,10 +42,10 @@
     
     <item>
       <title>Iot</title>
-      <link>http://renanm.com/pt-br/tags/iot/</link>
+      <link>http://localhost:1313/pt-br/tags/iot/</link>
       <pubDate>Sun, 14 Sep 2025 16:47:29 -0400</pubDate>
       
-      <guid>http://renanm.com/pt-br/tags/iot/</guid>
+      <guid>http://localhost:1313/pt-br/tags/iot/</guid>
       
         <description></description>
       
@@ -53,10 +53,10 @@
     
     <item>
       <title>Tasmota</title>
-      <link>http://renanm.com/pt-br/tags/tasmota/</link>
+      <link>http://localhost:1313/pt-br/tags/tasmota/</link>
       <pubDate>Sun, 14 Sep 2025 16:47:29 -0400</pubDate>
       
-      <guid>http://renanm.com/pt-br/tags/tasmota/</guid>
+      <guid>http://localhost:1313/pt-br/tags/tasmota/</guid>
       
         <description></description>
       

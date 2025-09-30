@@ -2,212 +2,212 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://renanm.com/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-09-29T21:45:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/posts/"
+                href="http://localhost:1313/pt-br/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/posts/"
+                href="http://localhost:1313/posts/"
                 />
   </url><url>
-    <loc>http://renanm.com/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-09-29T21:45:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/"
+                href="http://localhost:1313/pt-br/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/"
+                href="http://localhost:1313/"
                 />
   </url><url>
-    <loc>http://renanm.com/tags/diy/</loc>
+    <loc>http://localhost:1313/tags/diy/</loc>
     <lastmod>2025-09-14T16:47:29-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/tags/diy/"
+                href="http://localhost:1313/pt-br/tags/diy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/tags/diy/"
+                href="http://localhost:1313/tags/diy/"
                 />
   </url><url>
-    <loc>http://renanm.com/posts/flashing-sonoff-s31-flipper-zero/</loc>
+    <loc>http://localhost:1313/posts/flashing-sonoff-s31-flipper-zero/</loc>
     <lastmod>2025-09-14T16:47:29-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/posts/flashing-sonoff-s31-flipper-zero/"
+                href="http://localhost:1313/pt-br/posts/flashing-sonoff-s31-flipper-zero/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/posts/flashing-sonoff-s31-flipper-zero/"
+                href="http://localhost:1313/posts/flashing-sonoff-s31-flipper-zero/"
                 />
   </url><url>
-    <loc>http://renanm.com/tags/flipper-zero/</loc>
+    <loc>http://localhost:1313/tags/flipper-zero/</loc>
     <lastmod>2025-09-14T16:47:29-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/tags/flipper-zero/"
+                href="http://localhost:1313/pt-br/tags/flipper-zero/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/tags/flipper-zero/"
+                href="http://localhost:1313/tags/flipper-zero/"
                 />
   </url><url>
-    <loc>http://renanm.com/tags/home-assistant/</loc>
+    <loc>http://localhost:1313/tags/home-assistant/</loc>
     <lastmod>2025-09-14T16:47:29-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/tags/home-assistant/"
+                href="http://localhost:1313/pt-br/tags/home-assistant/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/tags/home-assistant/"
+                href="http://localhost:1313/tags/home-assistant/"
                 />
   </url><url>
-    <loc>http://renanm.com/tags/iot/</loc>
+    <loc>http://localhost:1313/tags/iot/</loc>
     <lastmod>2025-09-14T16:47:29-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/tags/iot/"
+                href="http://localhost:1313/pt-br/tags/iot/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/tags/iot/"
+                href="http://localhost:1313/tags/iot/"
                 />
   </url><url>
-    <loc>http://renanm.com/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-09-14T16:47:29-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/tags/"
+                href="http://localhost:1313/pt-br/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/tags/"
+                href="http://localhost:1313/tags/"
                 />
   </url><url>
-    <loc>http://renanm.com/tags/tasmota/</loc>
+    <loc>http://localhost:1313/tags/tasmota/</loc>
     <lastmod>2025-09-14T16:47:29-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/tags/tasmota/"
+                href="http://localhost:1313/pt-br/tags/tasmota/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/tags/tasmota/"
+                href="http://localhost:1313/tags/tasmota/"
                 />
   </url><url>
-    <loc>http://renanm.com/posts/keep-your-dns-uptodate-with-azure/</loc>
+    <loc>http://localhost:1313/posts/keep-your-dns-uptodate-with-azure/</loc>
     <lastmod>2025-02-03T11:36:42-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/posts/keep-your-dns-uptodate-with-azure/"
+                href="http://localhost:1313/pt-br/posts/keep-your-dns-uptodate-with-azure/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/posts/keep-your-dns-uptodate-with-azure/"
+                href="http://localhost:1313/posts/keep-your-dns-uptodate-with-azure/"
                 />
   </url><url>
-    <loc>http://renanm.com/posts/ollama-deepseek/</loc>
+    <loc>http://localhost:1313/posts/ollama-deepseek/</loc>
     <lastmod>2025-01-28T17:36:42-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/posts/ollama-deepseek/"
+                href="http://localhost:1313/pt-br/posts/ollama-deepseek/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/posts/ollama-deepseek/"
+                href="http://localhost:1313/posts/ollama-deepseek/"
                 />
   </url><url>
-    <loc>http://renanm.com/posts/azure-dns/</loc>
+    <loc>http://localhost:1313/posts/azure-dns/</loc>
     <lastmod>2024-03-28T09:08:40-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/posts/azure-dns/"
+                href="http://localhost:1313/pt-br/posts/azure-dns/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/posts/azure-dns/"
+                href="http://localhost:1313/posts/azure-dns/"
                 />
   </url><url>
-    <loc>http://renanm.com/whoami/</loc>
+    <loc>http://localhost:1313/whoami/</loc>
     <lastmod>2023-09-29T09:02:41-04:00</lastmod>
   </url><url>
-    <loc>http://renanm.com/posts/azure-arc-ubuntu/</loc>
+    <loc>http://localhost:1313/posts/azure-arc-ubuntu/</loc>
     <lastmod>2023-09-08T11:32:06-04:00</lastmod>
   </url><url>
-    <loc>http://renanm.com/posts/pfsense-udm-wiregard/</loc>
+    <loc>http://localhost:1313/posts/pfsense-udm-wiregard/</loc>
     <lastmod>2023-08-20T16:28:38-04:00</lastmod>
   </url><url>
-    <loc>http://renanm.com/posts/sentinel-pfsense/</loc>
+    <loc>http://localhost:1313/posts/sentinel-pfsense/</loc>
     <lastmod>2023-08-19T14:55:27-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/posts/sentinel-pfsense/"
+                href="http://localhost:1313/pt-br/posts/sentinel-pfsense/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/posts/sentinel-pfsense/"
+                href="http://localhost:1313/posts/sentinel-pfsense/"
                 />
   </url><url>
-    <loc>http://renanm.com/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2023-08-16T14:16:11-04:00</lastmod>
   </url><url>
-    <loc>http://renanm.com/posts/my-first-post/</loc>
+    <loc>http://localhost:1313/posts/my-first-post/</loc>
     <lastmod>2023-08-15T11:05:30-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/posts/my-first-post/"
+                href="http://localhost:1313/pt-br/posts/my-first-post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/posts/my-first-post/"
+                href="http://localhost:1313/posts/my-first-post/"
                 />
   </url><url>
-    <loc>http://renanm.com/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://renanm.com/pt-br/categories/"
+                href="http://localhost:1313/pt-br/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://renanm.com/categories/"
+                href="http://localhost:1313/categories/"
                 />
   </url><url>
-    <loc>http://renanm.com/portfolio/</loc>
+    <loc>http://localhost:1313/portfolio/</loc>
   </url>
 </urlset>
