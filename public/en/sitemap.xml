@@ -2,6 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://renanm.com/posts/</loc>
+    <lastmod>2025-09-29T21:45:00-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="http://renanm.com/pt-br/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://renanm.com/posts/"
+                />
+  </url><url>
+    <loc>http://renanm.com/</loc>
+    <lastmod>2025-09-29T21:45:00-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="http://renanm.com/pt-br/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://renanm.com/"
+                />
+  </url><url>
     <loc>http://renanm.com/tags/diy/</loc>
     <lastmod>2025-09-14T16:47:29-04:00</lastmod>
     <xhtml:link
@@ -65,32 +91,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://renanm.com/tags/iot/"
-                />
-  </url><url>
-    <loc>http://renanm.com/posts/</loc>
-    <lastmod>2025-09-14T16:47:29-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="http://renanm.com/pt-br/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://renanm.com/posts/"
-                />
-  </url><url>
-    <loc>http://renanm.com/</loc>
-    <lastmod>2025-09-14T16:47:29-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="http://renanm.com/pt-br/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://renanm.com/"
                 />
   </url><url>
     <loc>http://renanm.com/tags/</loc>
