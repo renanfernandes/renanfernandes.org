@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on renan</title>
-    <link>http://localhost:1313/pt-br/tags/</link>
+    <link>http://renanm.com/pt-br/tags/</link>
     <description>Recent content in Tags on renan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Mon, 29 Sep 2025 20:45:00 -0400</lastBuildDate><atom:link href="http://localhost:1313/pt-br/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Sep 2025 20:45:00 -0400</lastBuildDate><atom:link href="http://renanm.com/pt-br/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Caddy</title>
-      <link>http://localhost:1313/pt-br/tags/caddy/</link>
+      <link>http://renanm.com/pt-br/tags/caddy/</link>
       <pubDate>Mon, 29 Sep 2025 20:45:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/tags/caddy/</guid>
+      <guid>http://renanm.com/pt-br/tags/caddy/</guid>
       
         <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Diy</title>
-      <link>http://localhost:1313/pt-br/tags/diy/</link>
+      <link>http://renanm.com/pt-br/tags/diy/</link>
       <pubDate>Mon, 29 Sep 2025 20:45:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/tags/diy/</guid>
+      <guid>http://renanm.com/pt-br/tags/diy/</guid>
       
         <description></description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>Entra-Id</title>
-      <link>http://localhost:1313/pt-br/tags/entra-id/</link>
+      <link>http://renanm.com/pt-br/tags/entra-id/</link>
       <pubDate>Mon, 29 Sep 2025 20:45:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/tags/entra-id/</guid>
+      <guid>http://renanm.com/pt-br/tags/entra-id/</guid>
       
         <description></description>
       
@@ -42,10 +42,10 @@
     
     <item>
       <title>Home-Assistant</title>
-      <link>http://localhost:1313/pt-br/tags/home-assistant/</link>
+      <link>http://renanm.com/pt-br/tags/home-assistant/</link>
       <pubDate>Mon, 29 Sep 2025 20:45:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/tags/home-assistant/</guid>
+      <guid>http://renanm.com/pt-br/tags/home-assistant/</guid>
       
         <description></description>
       
@@ -53,10 +53,10 @@
     
     <item>
       <title>Reverse-Proxy</title>
-      <link>http://localhost:1313/pt-br/tags/reverse-proxy/</link>
+      <link>http://renanm.com/pt-br/tags/reverse-proxy/</link>
       <pubDate>Mon, 29 Sep 2025 20:45:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/tags/reverse-proxy/</guid>
+      <guid>http://renanm.com/pt-br/tags/reverse-proxy/</guid>
       
         <description></description>
       
@@ -64,10 +64,10 @@
     
     <item>
       <title>Flipper-Zero</title>
-      <link>http://localhost:1313/pt-br/tags/flipper-zero/</link>
+      <link>http://renanm.com/pt-br/tags/flipper-zero/</link>
       <pubDate>Sun, 14 Sep 2025 16:47:29 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/tags/flipper-zero/</guid>
+      <guid>http://renanm.com/pt-br/tags/flipper-zero/</guid>
       
         <description></description>
       
@@ -75,10 +75,10 @@
     
     <item>
       <title>Iot</title>
-      <link>http://localhost:1313/pt-br/tags/iot/</link>
+      <link>http://renanm.com/pt-br/tags/iot/</link>
       <pubDate>Sun, 14 Sep 2025 16:47:29 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/tags/iot/</guid>
+      <guid>http://renanm.com/pt-br/tags/iot/</guid>
       
         <description></description>
       
@@ -86,10 +86,10 @@
     
     <item>
       <title>Tasmota</title>
-      <link>http://localhost:1313/pt-br/tags/tasmota/</link>
+      <link>http://renanm.com/pt-br/tags/tasmota/</link>
       <pubDate>Sun, 14 Sep 2025 16:47:29 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/tags/tasmota/</guid>
+      <guid>http://renanm.com/pt-br/tags/tasmota/</guid>
       
         <description></description>
       

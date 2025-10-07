@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reverse-Proxy on renan</title>
-    <link>http://localhost:1313/pt-br/tags/reverse-proxy/</link>
+    <link>http://renanm.com/pt-br/tags/reverse-proxy/</link>
     <description>Recent content in Reverse-Proxy on renan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Mon, 29 Sep 2025 20:45:00 -0400</lastBuildDate><atom:link href="http://localhost:1313/pt-br/tags/reverse-proxy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Sep 2025 20:45:00 -0400</lastBuildDate><atom:link href="http://renanm.com/pt-br/tags/reverse-proxy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Protegendo o Home Assistant com Caddy e Microsoft Entra ID</title>
-      <link>http://localhost:1313/pt-br/posts/protecting-ha-caddy-entra-updated/</link>
+      <link>http://renanm.com/pt-br/posts/protecting-ha-caddy-entra-updated/</link>
       <pubDate>Mon, 29 Sep 2025 20:45:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/posts/protecting-ha-caddy-entra-updated/</guid>
+      <guid>http://renanm.com/pt-br/posts/protecting-ha-caddy-entra-updated/</guid>
       
         <description>&lt;p&gt;Na minha eterna missão de organizar o meu home lab, finalmente resolvi algo que me incomodava há um tempo: &lt;strong&gt;como expor o Home Assistant para fora da minha rede de forma segura, sem logins duvidosos ou avisos de certificados autoassinados.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Primeiro de tudo: eu tinha algumas opções para o proxy reverso — os suspeitos de sempre como nginx ou Traefik — mas escolhi o &lt;strong&gt;Caddy&lt;/strong&gt;. Por quê? Sinceramente, porque é muito mais fácil. A sintaxe de configuração é limpa, ele faz a coisa certa na maior parte do tempo sem precisar brigar, e a comunidade/documentação são excelentes. Com nginx eu sempre sinto que estou caçando mais uma linha de &lt;code&gt;proxy_set_header&lt;/code&gt;. Com o Caddy, simplesmente&amp;hellip; funciona.&lt;/p&gt;</description>

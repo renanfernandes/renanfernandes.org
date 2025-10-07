@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>renan</title>
-    <link>http://localhost:1313/pt-br/</link>
+    <link>http://renanm.com/pt-br/</link>
     <description>Recent content on renan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Mon, 29 Sep 2025 20:45:00 -0400</lastBuildDate><atom:link href="http://localhost:1313/pt-br/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Sep 2025 20:45:00 -0400</lastBuildDate><atom:link href="http://renanm.com/pt-br/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Protegendo o Home Assistant com Caddy e Microsoft Entra ID</title>
-      <link>http://localhost:1313/pt-br/posts/protecting-ha-caddy-entra-updated/</link>
+      <link>http://renanm.com/pt-br/posts/protecting-ha-caddy-entra-updated/</link>
       <pubDate>Mon, 29 Sep 2025 20:45:00 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/posts/protecting-ha-caddy-entra-updated/</guid>
+      <guid>http://renanm.com/pt-br/posts/protecting-ha-caddy-entra-updated/</guid>
       
         <description>&lt;p&gt;Na minha eterna missão de organizar o meu home lab, finalmente resolvi algo que me incomodava há um tempo: &lt;strong&gt;como expor o Home Assistant para fora da minha rede de forma segura, sem logins duvidosos ou avisos de certificados autoassinados.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Primeiro de tudo: eu tinha algumas opções para o proxy reverso — os suspeitos de sempre como nginx ou Traefik — mas escolhi o &lt;strong&gt;Caddy&lt;/strong&gt;. Por quê? Sinceramente, porque é muito mais fácil. A sintaxe de configuração é limpa, ele faz a coisa certa na maior parte do tempo sem precisar brigar, e a comunidade/documentação são excelentes. Com nginx eu sempre sinto que estou caçando mais uma linha de &lt;code&gt;proxy_set_header&lt;/code&gt;. Com o Caddy, simplesmente&amp;hellip; funciona.&lt;/p&gt;</description>
@@ -21,10 +21,10 @@
     
     <item>
       <title>Flashing Sonoff S31 com o Flipper Zero (Sem Adaptador USB Serial!)</title>
-      <link>http://localhost:1313/pt-br/posts/flashing-sonoff-s31-flipper-zero/</link>
+      <link>http://renanm.com/pt-br/posts/flashing-sonoff-s31-flipper-zero/</link>
       <pubDate>Sun, 14 Sep 2025 16:47:29 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/posts/flashing-sonoff-s31-flipper-zero/</guid>
+      <guid>http://renanm.com/pt-br/posts/flashing-sonoff-s31-flipper-zero/</guid>
       
         <description>&lt;p&gt;Um guia passo a passo de como fazer &lt;strong&gt;Flashing&lt;/strong&gt; no &lt;strong&gt;Sonoff S31&lt;/strong&gt; com o firmware &lt;strong&gt;Tasmota&lt;/strong&gt;, usando apenas o &lt;strong&gt;Flipper Zero&lt;/strong&gt; (sem adaptador USB-Serial e sem necessidade de solda).&lt;/p&gt;
 &lt;hr&gt;
@@ -34,22 +34,22 @@
     
     <item>
       <title>Mantenha Seu DNS Atualizado com Azure: Um Script de DNS Dinâmico para Linux</title>
-      <link>http://localhost:1313/pt-br/posts/keep-your-dns-uptodate-with-azure/</link>
+      <link>http://renanm.com/pt-br/posts/keep-your-dns-uptodate-with-azure/</link>
       <pubDate>Mon, 03 Feb 2025 11:36:42 -0500</pubDate>
       
-      <guid>http://localhost:1313/pt-br/posts/keep-your-dns-uptodate-with-azure/</guid>
+      <guid>http://renanm.com/pt-br/posts/keep-your-dns-uptodate-with-azure/</guid>
       
         <description>&lt;p&gt;Manter seus registros DNS atualizados é essencial se você está executando serviços com um endereço IP dinâmico.&lt;br&gt;
-Após mover minha &lt;a href=&#34;http://localhost:1313/pt-br/posts/azure-dns/&#34;&gt;Zona DNS do NoIP para o Azure&lt;/a&gt;, eu precisei de uma maneira confiável de atualizar o registro DNS de uma das minhas máquinas no exterior. Como não existe uma solução &amp;ldquo;nativa&amp;rdquo; de cliente dyndns para o Azure, a tarefa foi criar a minha própria. O que não é tão ruim quanto parece.&lt;/p&gt;</description>
+Após mover minha &lt;a href=&#34;http://renanm.com/pt-br/posts/azure-dns/&#34;&gt;Zona DNS do NoIP para o Azure&lt;/a&gt;, eu precisei de uma maneira confiável de atualizar o registro DNS de uma das minhas máquinas no exterior. Como não existe uma solução &amp;ldquo;nativa&amp;rdquo; de cliente dyndns para o Azure, a tarefa foi criar a minha própria. O que não é tão ruim quanto parece.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Controle Total do DeepSeek R1: Passo a Passo para Instalação Local</title>
-      <link>http://localhost:1313/pt-br/posts/ollama-deepseek/</link>
+      <link>http://renanm.com/pt-br/posts/ollama-deepseek/</link>
       <pubDate>Tue, 28 Jan 2025 17:36:42 -0500</pubDate>
       
-      <guid>http://localhost:1313/pt-br/posts/ollama-deepseek/</guid>
+      <guid>http://renanm.com/pt-br/posts/ollama-deepseek/</guid>
       
         <description>&lt;p&gt;Essa semana uma startup Chinesa movimentou o mercado de tecnologia com o DeekSeek R1, um novo modelo que está revolucionando os &lt;a href=&#34;https://www.theverge.com/ai-artificial-intelligence/598846/deepseek-big-tech-ai-industry-nvidia-impac&#34;&gt;mercados essa semana&lt;/a&gt; (27 de janeiro de 2025), e causando preocupações sobre como o &lt;a href=&#34;https://www.wired.com/story/deepseek-ai-china-privacy-data/&#34;&gt;DeepSeek coleta seus dados&lt;/a&gt;. Afinal, sua política de privacidade afirma explicitamente que as informações coletadas são armazenadas em servidores localizados na República Popular da China. Isso inclui entradas dos usuários, como mensagens de chat, informações do dispositivo e dados de interação. Críticos estão preocupados com o potencial de censura de conteúdo e o uso indevido de dados coletados pelo governo chinês.&lt;/p&gt;</description>
       
@@ -57,10 +57,10 @@ Após mover minha &lt;a href=&#34;http://localhost:1313/pt-br/posts/azure-dns/&#
     
     <item>
       <title>Azure DNS</title>
-      <link>http://localhost:1313/pt-br/posts/azure-dns/</link>
+      <link>http://renanm.com/pt-br/posts/azure-dns/</link>
       <pubDate>Thu, 28 Mar 2024 09:08:40 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/posts/azure-dns/</guid>
+      <guid>http://renanm.com/pt-br/posts/azure-dns/</guid>
       
         <description>&lt;p&gt;Eu sempre usei o noip para gerenciar minhas Zonas DNS, mas conforme continuo adicionando domínios adicionais, isso se tornou caro. A Azure cobra apenas $0.50/mês pelas primeiras 25 zonas DNS, então isso é uma vantagem em comparação com os mais de $20 que pago pelo NoIP. Este guia mostra como criar uma zona e gerenciá-la dentro da Azure.&lt;/p&gt;
 &lt;h2 id=&#34;criando-uma-nova-zona-dns&#34;&gt;Criando uma nova Zona DNS&lt;/h2&gt;
@@ -72,10 +72,10 @@ Nos detalhes da instância, digite o nome de domínio que você comprou de um re
     
     <item>
       <title>Conectando seu pfSense ao Microsoft Sentinel</title>
-      <link>http://localhost:1313/pt-br/posts/sentinel-pfsense/</link>
+      <link>http://renanm.com/pt-br/posts/sentinel-pfsense/</link>
       <pubDate>Sat, 19 Aug 2023 14:55:27 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/posts/sentinel-pfsense/</guid>
+      <guid>http://renanm.com/pt-br/posts/sentinel-pfsense/</guid>
       
         <description>&lt;p&gt;Apenas uma coleção de modelos, scripts, arquivos de configuração e observações de teste para facilitar minha vida. Isso faz parte do meu próprio repositório no GitHub (e um dos poucos que eu torno público), então use o conteúdo e scripts aqui por sua própria conta e risco :)&lt;/p&gt;
 &lt;p&gt;Integrando Sentinel e a Infraestrutura Residencial
@@ -85,10 +85,10 @@ Nos detalhes da instância, digite o nome de domínio que você comprou de um re
     
     <item>
       <title>Hello World</title>
-      <link>http://localhost:1313/pt-br/posts/my-first-post/</link>
+      <link>http://renanm.com/pt-br/posts/my-first-post/</link>
       <pubDate>Tue, 15 Aug 2023 11:05:30 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/posts/my-first-post/</guid>
+      <guid>http://renanm.com/pt-br/posts/my-first-post/</guid>
       
         <description>&lt;h1 id=&#34;olá-mundo&#34;&gt;Olá Mundo&lt;/h1&gt;
 &lt;p&gt;Primeiro post &lt;strong&gt;olá!&lt;/strong&gt;&lt;/p&gt;</description>

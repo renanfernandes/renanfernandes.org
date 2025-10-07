@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Iot on renan</title>
-    <link>http://localhost:1313/pt-br/tags/iot/</link>
+    <link>http://renanm.com/pt-br/tags/iot/</link>
     <description>Recent content in Iot on renan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sun, 14 Sep 2025 16:47:29 -0400</lastBuildDate><atom:link href="http://localhost:1313/pt-br/tags/iot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Sep 2025 16:47:29 -0400</lastBuildDate><atom:link href="http://renanm.com/pt-br/tags/iot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flashing Sonoff S31 com o Flipper Zero (Sem Adaptador USB Serial!)</title>
-      <link>http://localhost:1313/pt-br/posts/flashing-sonoff-s31-flipper-zero/</link>
+      <link>http://renanm.com/pt-br/posts/flashing-sonoff-s31-flipper-zero/</link>
       <pubDate>Sun, 14 Sep 2025 16:47:29 -0400</pubDate>
       
-      <guid>http://localhost:1313/pt-br/posts/flashing-sonoff-s31-flipper-zero/</guid>
+      <guid>http://renanm.com/pt-br/posts/flashing-sonoff-s31-flipper-zero/</guid>
       
         <description>&lt;p&gt;Um guia passo a passo de como fazer &lt;strong&gt;Flashing&lt;/strong&gt; no &lt;strong&gt;Sonoff S31&lt;/strong&gt; com o firmware &lt;strong&gt;Tasmota&lt;/strong&gt;, usando apenas o &lt;strong&gt;Flipper Zero&lt;/strong&gt; (sem adaptador USB-Serial e sem necessidade de solda).&lt;/p&gt;
 &lt;hr&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Iot on renan</title>
-    <link>http://localhost:1313/tags/iot/</link>
+    <link>http://renanm.com/tags/iot/</link>
     <description>Recent content in Iot on renan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 14 Sep 2025 16:47:29 -0400</lastBuildDate><atom:link href="http://localhost:1313/tags/iot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Sep 2025 16:47:29 -0400</lastBuildDate><atom:link href="http://renanm.com/tags/iot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flashing Sonoff S31 with Flipper Zero (No USB Dongle Needed!)</title>
-      <link>http://localhost:1313/posts/flashing-sonoff-s31-flipper-zero/</link>
+      <link>http://renanm.com/posts/flashing-sonoff-s31-flipper-zero/</link>
       <pubDate>Sun, 14 Sep 2025 16:47:29 -0400</pubDate>
       
-      <guid>http://localhost:1313/posts/flashing-sonoff-s31-flipper-zero/</guid>
+      <guid>http://renanm.com/posts/flashing-sonoff-s31-flipper-zero/</guid>
       
         <description>&lt;p&gt;A step-by-step guide on flashing the &lt;strong&gt;Sonoff S31&lt;/strong&gt; smart plug with &lt;strong&gt;Tasmota&lt;/strong&gt;, using only a &lt;strong&gt;Flipper Zero&lt;/strong&gt; (no USB-to-Serial dongle, no soldering required).&lt;/p&gt;
 &lt;hr&gt;
