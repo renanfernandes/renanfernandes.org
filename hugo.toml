@@ -7,6 +7,7 @@ disqusShortname = "renanm"
 
 [params]
 displayMode = "dark" # set the darkmode as default
+contentratio = 0.65
 
 [services]
   [services.disqus]

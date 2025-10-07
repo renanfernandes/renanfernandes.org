@@ -2,8 +2,60 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/caddy/</loc>
+    <lastmod>2025-09-29T20:45:00-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="http://localhost:1313/pt-br/tags/caddy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/caddy/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/diy/</loc>
+    <lastmod>2025-09-29T20:45:00-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="http://localhost:1313/pt-br/tags/diy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/diy/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/entra-id/</loc>
+    <lastmod>2025-09-29T20:45:00-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="http://localhost:1313/pt-br/tags/entra-id/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/entra-id/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/home-assistant/</loc>
+    <lastmod>2025-09-29T20:45:00-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="http://localhost:1313/pt-br/tags/home-assistant/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/home-assistant/"
+                />
+  </url><url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-09-29T21:45:00-04:00</lastmod>
+    <lastmod>2025-09-29T20:45:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -15,8 +67,21 @@
                 href="http://localhost:1313/posts/"
                 />
   </url><url>
+    <loc>http://localhost:1313/posts/protecting-ha-caddy-entra-updated/</loc>
+    <lastmod>2025-09-29T20:45:00-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="http://localhost:1313/pt-br/posts/protecting-ha-caddy-entra-updated/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/posts/protecting-ha-caddy-entra-updated/"
+                />
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-09-29T21:45:00-04:00</lastmod>
+    <lastmod>2025-09-29T20:45:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -28,17 +93,30 @@
                 href="http://localhost:1313/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/diy/</loc>
-    <lastmod>2025-09-14T16:47:29-04:00</lastmod>
+    <loc>http://localhost:1313/tags/reverse-proxy/</loc>
+    <lastmod>2025-09-29T20:45:00-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://localhost:1313/pt-br/tags/diy/"
+                href="http://localhost:1313/pt-br/tags/reverse-proxy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/tags/diy/"
+                href="http://localhost:1313/tags/reverse-proxy/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-09-29T20:45:00-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="http://localhost:1313/pt-br/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/tags/"
                 />
   </url><url>
     <loc>http://localhost:1313/posts/flashing-sonoff-s31-flipper-zero/</loc>
@@ -67,19 +145,6 @@
                 href="http://localhost:1313/tags/flipper-zero/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/home-assistant/</loc>
-    <lastmod>2025-09-14T16:47:29-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="http://localhost:1313/pt-br/tags/home-assistant/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/tags/home-assistant/"
-                />
-  </url><url>
     <loc>http://localhost:1313/tags/iot/</loc>
     <lastmod>2025-09-14T16:47:29-04:00</lastmod>
     <xhtml:link
@@ -91,19 +156,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/tags/iot/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-09-14T16:47:29-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="http://localhost:1313/pt-br/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/tags/"
                 />
   </url><url>
     <loc>http://localhost:1313/tags/tasmota/</loc>

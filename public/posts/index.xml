@@ -6,7 +6,19 @@
     <description>Recent content in Posts on renan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 29 Sep 2025 21:45:00 -0400</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Sep 2025 20:45:00 -0400</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Protecting Home Assistant with Caddy and Microsoft Entra ID</title>
+      <link>http://localhost:1313/posts/protecting-ha-caddy-entra-updated/</link>
+      <pubDate>Mon, 29 Sep 2025 20:45:00 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/protecting-ha-caddy-entra-updated/</guid>
+      
+        <description>&lt;p&gt;In my never-ending quest to clean up my home lab, I finally tackled something that had been bugging me for a while: &lt;strong&gt;how to safely expose Home Assistant to the outside world without sketchy logins or self-signed cert warnings.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;So first things first: I had a couple of options for the reverse proxy layer — the usual suspects like nginx or Traefik — but I went with &lt;strong&gt;Caddy&lt;/strong&gt;. Why? Honestly, it’s just easier. The config syntax is clean, it automatically does the right thing most of the time, and the community docs/examples are great. With nginx I always feel like I’m hunting down one more &lt;code&gt;proxy_set_header&lt;/code&gt; line. With Caddy, it just&amp;hellip; works.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Flashing Sonoff S31 with Flipper Zero (No USB Dongle Needed!)</title>
       <link>http://localhost:1313/posts/flashing-sonoff-s31-flipper-zero/</link>
